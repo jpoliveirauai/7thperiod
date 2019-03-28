@@ -11,6 +11,6 @@ s.listen(5)							#Wait for client connection, at max 5 clients in a communicati
 while True:
 	c, addr = s.accept()
 	print("Got connection from " + str(addr))
-	phrase = input("Envie uma mensagem: ")
-	c.send(bytes(phrase, 'utf-8'))
+	#phrase = input("Envie uma mensagem: ")
+	c.send(bytes("adfsafJP", 'utf-8'))
 	c.close()
