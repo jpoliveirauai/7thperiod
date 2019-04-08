@@ -1,0 +1,149 @@
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+\usepackage{tabularx}
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+% ---
+
+%--------------Pacotes de citações
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+\usepackage{hyperref}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{plano de trabalho}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+%-----------------------------------------
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+\textbf{Graduação em Ciência da Computação - UFU}
+
+\textbf{Disciplina:} GBC235 - Tópicos especiais de Segurança da Informação - Laboratórios e outras atividades práticas sobre Segurança de Redes 
+
+\textbf{Professor:} Prof. Rodrigo Sanches Miani
+
+\textbf{Nome:} João Paulo de Oliveira
+
+% ------------------ Título -----------------------
+\section*{\centerline{\Large \textbf{Relatório XYZ}}}
+% -------------------------------------------------
+
+%------------------- Corpo de dados --------------
+\vspace*{0.5cm}
+
+\textbf{Objetivo da atividade:} apresentar sucintamente o objetivo da atividade.
+
+\textbf{Questão 1)}
+Amafil
+Correios
+Apple"
+
+\textbf{Questão 2)}
+
+
+\begin{center}
+    \begin{table}[!htb]
+    \begin{tabular}{|l|l|}
+    \hline
+    Endereço IP & Info \\ \hline
+     &  \\ \hline
+    \end{tabular}
+    \end{table}
+\end{center}
+
+\textbf{Questão 3)}
+A diretiva site:ufu.br inurl:admin é uma tentativa de encontrar alguma url que esteja sob o domínio de administradores, ou tenha relação com tais
+
+\include{table3}
+
+\textbf{Questão 4)}
+\bibliography{ref}
+
+Listar as principais referências bibliográficas (livros, artigos, sites) utilizadas ao redigir o relatório.
+
+\end{document}
