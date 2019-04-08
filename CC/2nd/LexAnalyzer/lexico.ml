@@ -2,6 +2,8 @@
  
 	open Lexing
 	open Printf
+
+(* Increment the line and column counter *)
 	let incr_num_linha lexbuf =
 		let pos = lexbuf.lex_curr_p in
 		lexbuf.lex_curr_p <- { pos with
@@ -9,6 +11,7 @@
 			pos_bol = pos.pos_cnum;
 		}
 
+(* Generate the error message highlighting the line and column *)
 let msg_erro lexbuf c =
 	let pos = lexbuf.lex_curr_p in
 	let lin = pos.pos_lnum
@@ -18,11 +21,6 @@ let msg_erro lexbuf c =
 	let erro lin col msg =
 		let mensagem = sprintf "%d-%d: %s" lin col msg in
 			failwith mensagem
-
-	let erroComentario lin col msg =
-		let mensagem = sprintf "%d-%d: %s" lin col msg in
-		failwith mensagem
-
 type tokens = APAR 
 			|FPAR 
 			
@@ -72,7 +70,7 @@ type tokens = APAR
 			|FCHAVE
 
 
-# 76 "lexico.ml"
+# 74 "lexico.ml"
 let __ocaml_lex_tables = {
   Lexing.lex_base = 
    "\000\000\209\255\210\255\211\255\078\000\155\000\165\000\240\000\
@@ -1096,268 +1094,268 @@ let rec token lexbuf =
 and __ocaml_lex_token_rec lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
-# 86 "lexico.mll"
+# 84 "lexico.mll"
          ( token lexbuf )
-# 1102 "lexico.ml"
+# 1100 "lexico.ml"
 
   | 1 ->
-# 87 "lexico.mll"
+# 85 "lexico.mll"
              ( incr_num_linha lexbuf; token lexbuf )
-# 1107 "lexico.ml"
+# 1105 "lexico.ml"
 
   | 2 ->
-# 88 "lexico.mll"
+# 86 "lexico.mll"
               ( token lexbuf )
-# 1112 "lexico.ml"
+# 1110 "lexico.ml"
 
   | 3 ->
-# 89 "lexico.mll"
+# 87 "lexico.mll"
           (	let pos = lexbuf.lex_curr_p in
 						let lin = pos.pos_lnum
 						and col = pos.pos_cnum - pos.pos_bol - 1 in
 						comentario_bloco lin col 0 lexbuf 
 					)
-# 1121 "lexico.ml"
+# 1119 "lexico.ml"
 
   | 4 ->
-# 101 "lexico.mll"
+# 92 "lexico.mll"
          (ACHAVE)
-# 1126 "lexico.ml"
+# 1124 "lexico.ml"
 
   | 5 ->
-# 102 "lexico.mll"
+# 93 "lexico.mll"
          (FCHAVE)
-# 1131 "lexico.ml"
+# 1129 "lexico.ml"
 
   | 6 ->
-# 103 "lexico.mll"
+# 94 "lexico.mll"
          ( APAR )
-# 1136 "lexico.ml"
+# 1134 "lexico.ml"
 
   | 7 ->
-# 104 "lexico.mll"
+# 95 "lexico.mll"
          ( FPAR )
-# 1141 "lexico.ml"
+# 1139 "lexico.ml"
 
   | 8 ->
-# 107 "lexico.mll"
+# 98 "lexico.mll"
          ( VIRG )
-# 1146 "lexico.ml"
+# 1144 "lexico.ml"
 
   | 9 ->
-# 108 "lexico.mll"
+# 99 "lexico.mll"
          ( PONTOVIRG )
-# 1151 "lexico.ml"
+# 1149 "lexico.ml"
 
   | 10 ->
-# 109 "lexico.mll"
+# 100 "lexico.mll"
          ( PONTO )
-# 1156 "lexico.ml"
+# 1154 "lexico.ml"
 
   | 11 ->
-# 112 "lexico.mll"
+# 103 "lexico.mll"
            ( VAR )
-# 1161 "lexico.ml"
+# 1159 "lexico.ml"
 
   | 12 ->
-# 113 "lexico.mll"
+# 104 "lexico.mll"
              ( PRINT )
-# 1166 "lexico.ml"
+# 1164 "lexico.ml"
 
   | 13 ->
-# 114 "lexico.mll"
+# 105 "lexico.mll"
              ( LEIA )
-# 1171 "lexico.ml"
+# 1169 "lexico.ml"
 
   | 14 ->
-# 116 "lexico.mll"
+# 107 "lexico.mll"
          ( MAIS )
-# 1176 "lexico.ml"
+# 1174 "lexico.ml"
 
   | 15 ->
-# 117 "lexico.mll"
+# 108 "lexico.mll"
          ( MENOS )
-# 1181 "lexico.ml"
+# 1179 "lexico.ml"
 
   | 16 ->
-# 118 "lexico.mll"
+# 109 "lexico.mll"
          ( DIVIDE )
-# 1186 "lexico.ml"
+# 1184 "lexico.ml"
 
   | 17 ->
-# 119 "lexico.mll"
+# 110 "lexico.mll"
          ( MULTIPLICA )
-# 1191 "lexico.ml"
+# 1189 "lexico.ml"
 
   | 18 ->
-# 120 "lexico.mll"
+# 111 "lexico.mll"
           ( EXPOENTE )
-# 1196 "lexico.ml"
+# 1194 "lexico.ml"
 
   | 19 ->
-# 121 "lexico.mll"
+# 112 "lexico.mll"
          ( MAIOR )
-# 1201 "lexico.ml"
+# 1199 "lexico.ml"
 
   | 20 ->
-# 122 "lexico.mll"
+# 113 "lexico.mll"
          ( MENOR )
-# 1206 "lexico.ml"
+# 1204 "lexico.ml"
 
   | 21 ->
-# 123 "lexico.mll"
+# 114 "lexico.mll"
          ( IGUAL )
-# 1211 "lexico.ml"
+# 1209 "lexico.ml"
 
   | 22 ->
-# 124 "lexico.mll"
+# 115 "lexico.mll"
         ( DOISPONTOS )
-# 1216 "lexico.ml"
+# 1214 "lexico.ml"
 
   | 23 ->
-# 125 "lexico.mll"
+# 116 "lexico.mll"
          ( MAIORIGUAL )
-# 1221 "lexico.ml"
+# 1219 "lexico.ml"
 
   | 24 ->
-# 126 "lexico.mll"
+# 117 "lexico.mll"
          ( MENORIGUAL )
-# 1226 "lexico.ml"
+# 1224 "lexico.ml"
 
   | 25 ->
-# 127 "lexico.mll"
+# 118 "lexico.mll"
          ( DIFERENTE )
-# 1231 "lexico.ml"
+# 1229 "lexico.ml"
 
   | 26 ->
-# 128 "lexico.mll"
+# 119 "lexico.mll"
          ( DECREMENTO )
-# 1236 "lexico.ml"
+# 1234 "lexico.ml"
 
   | 27 ->
-# 129 "lexico.mll"
+# 120 "lexico.mll"
          ( INCREMENTO )
-# 1241 "lexico.ml"
+# 1239 "lexico.ml"
 
   | 28 ->
-# 130 "lexico.mll"
+# 121 "lexico.mll"
         ( ATRIB )
-# 1246 "lexico.ml"
+# 1244 "lexico.ml"
 
   | 29 ->
-# 131 "lexico.mll"
+# 122 "lexico.mll"
         ( MOD )
-# 1251 "lexico.ml"
+# 1249 "lexico.ml"
 
   | 30 ->
-# 132 "lexico.mll"
+# 123 "lexico.mll"
          ( OU )
-# 1256 "lexico.ml"
+# 1254 "lexico.ml"
 
   | 31 ->
-# 133 "lexico.mll"
+# 124 "lexico.mll"
          ( E )
-# 1261 "lexico.ml"
+# 1259 "lexico.ml"
 
   | 32 ->
-# 134 "lexico.mll"
+# 125 "lexico.mll"
               ( FUNCAO )
-# 1266 "lexico.ml"
+# 1264 "lexico.ml"
 
   | 33 ->
-# 135 "lexico.mll"
+# 126 "lexico.mll"
          ( IF )
-# 1271 "lexico.ml"
+# 1269 "lexico.ml"
 
   | 34 ->
-# 136 "lexico.mll"
+# 127 "lexico.mll"
               ( ELIFE )
-# 1276 "lexico.ml"
+# 1274 "lexico.ml"
 
   | 35 ->
-# 137 "lexico.mll"
+# 128 "lexico.mll"
            ( ELSE )
-# 1281 "lexico.ml"
+# 1279 "lexico.ml"
 
   | 36 ->
-# 138 "lexico.mll"
+# 129 "lexico.mll"
            ( WHILE )
-# 1286 "lexico.ml"
+# 1284 "lexico.ml"
 
   | 37 ->
-# 139 "lexico.mll"
+# 130 "lexico.mll"
           ( FOR )
-# 1291 "lexico.ml"
+# 1289 "lexico.ml"
 
   | 38 ->
-# 140 "lexico.mll"
-         ( DO )
-# 1296 "lexico.ml"
+# 131 "lexico.mll"
+          ( DO )
+# 1294 "lexico.ml"
 
   | 39 ->
-# 141 "lexico.mll"
+# 132 "lexico.mll"
            ( CASE )
-# 1301 "lexico.ml"
+# 1299 "lexico.ml"
 
   | 40 ->
-# 142 "lexico.mll"
+# 133 "lexico.mll"
             ( RETURN)
-# 1306 "lexico.ml"
+# 1304 "lexico.ml"
 
   | 41 ->
 let
-# 143 "lexico.mll"
+# 134 "lexico.mll"
              num
-# 1312 "lexico.ml"
+# 1310 "lexico.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 143 "lexico.mll"
+# 134 "lexico.mll"
                  ( let numero = int_of_string num in LITINT numero )
-# 1316 "lexico.ml"
+# 1314 "lexico.ml"
 
   | 42 ->
 let
-# 144 "lexico.mll"
+# 135 "lexico.mll"
           r
-# 1322 "lexico.ml"
+# 1320 "lexico.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 144 "lexico.mll"
+# 135 "lexico.mll"
               (let r = float_of_string r in LITREAL r)
-# 1326 "lexico.ml"
+# 1324 "lexico.ml"
 
   | 43 ->
 let
-# 145 "lexico.mll"
+# 136 "lexico.mll"
                    id
-# 1332 "lexico.ml"
+# 1330 "lexico.ml"
 = Lexing.sub_lexeme lexbuf lexbuf.Lexing.lex_start_pos lexbuf.Lexing.lex_curr_pos in
-# 145 "lexico.mll"
+# 136 "lexico.mll"
                       ( ID id )
-# 1336 "lexico.ml"
+# 1334 "lexico.ml"
 
   | 44 ->
-# 146 "lexico.mll"
+# 137 "lexico.mll"
         ( let pos = lexbuf.lex_curr_p in
 					let lin = pos.pos_lnum
 					and col = pos.pos_cnum - pos.pos_bol - 1 in
 					let buffer = Buffer.create 1 in
 					let str = leia_string lin col buffer lexbuf in
 					LITSTRING str )
-# 1346 "lexico.ml"
+# 1344 "lexico.ml"
 
   | 45 ->
 let
-# 152 "lexico.mll"
+# 143 "lexico.mll"
        c
-# 1352 "lexico.ml"
+# 1350 "lexico.ml"
 = Lexing.sub_lexeme_char lexbuf lexbuf.Lexing.lex_start_pos in
-# 152 "lexico.mll"
+# 143 "lexico.mll"
            ( failwith (msg_erro lexbuf c) )
-# 1356 "lexico.ml"
+# 1354 "lexico.ml"
 
   | 46 ->
-# 153 "lexico.mll"
+# 144 "lexico.mll"
         ( EOF )
-# 1361 "lexico.ml"
+# 1359 "lexico.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; 
       __ocaml_lex_token_rec lexbuf __ocaml_lex_state
@@ -1367,30 +1365,30 @@ and comentario_bloco lin col n lexbuf =
 and __ocaml_lex_comentario_bloco_rec lin col n lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
-# 155 "lexico.mll"
+# 146 "lexico.mll"
         ( if n=0 then token lexbuf
 					else comentario_bloco lin col (n-1) lexbuf )
-# 1374 "lexico.ml"
+# 1372 "lexico.ml"
 
   | 1 ->
-# 157 "lexico.mll"
+# 148 "lexico.mll"
           ( comentario_bloco lin col (n+1) lexbuf )
-# 1379 "lexico.ml"
+# 1377 "lexico.ml"
 
   | 2 ->
-# 158 "lexico.mll"
+# 149 "lexico.mll"
               ( incr_num_linha lexbuf; comentario_bloco lin col n lexbuf )
-# 1384 "lexico.ml"
+# 1382 "lexico.ml"
 
   | 3 ->
-# 159 "lexico.mll"
+# 150 "lexico.mll"
         ( comentario_bloco lin col n lexbuf )
-# 1389 "lexico.ml"
+# 1387 "lexico.ml"
 
   | 4 ->
-# 160 "lexico.mll"
-         ( erroComentario lin col "Comentario nao fechado" )
-# 1394 "lexico.ml"
+# 151 "lexico.mll"
+         ( erro lin col "Comentario nao fechado" )
+# 1392 "lexico.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; 
       __ocaml_lex_comentario_bloco_rec lin col n lexbuf __ocaml_lex_state
@@ -1400,44 +1398,44 @@ and leia_string lin col buffer lexbuf =
 and __ocaml_lex_leia_string_rec lin col buffer lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
-# 172 "lexico.mll"
+# 155 "lexico.mll"
 ( Buffer.contents buffer)
-# 1406 "lexico.ml"
+# 1404 "lexico.ml"
 
   | 1 ->
-# 173 "lexico.mll"
+# 156 "lexico.mll"
            ( Buffer.add_char buffer '\t'; leia_string lin col buffer lexbuf )
-# 1411 "lexico.ml"
+# 1409 "lexico.ml"
 
   | 2 ->
-# 174 "lexico.mll"
+# 157 "lexico.mll"
            ( Buffer.add_char buffer '\n'; leia_string lin col buffer lexbuf )
-# 1416 "lexico.ml"
+# 1414 "lexico.ml"
 
   | 3 ->
-# 175 "lexico.mll"
+# 158 "lexico.mll"
               ( Buffer.add_char buffer '"'; leia_string lin col buffer lexbuf )
-# 1421 "lexico.ml"
+# 1419 "lexico.ml"
 
   | 4 ->
-# 176 "lexico.mll"
+# 159 "lexico.mll"
               ( Buffer.add_char buffer '\\'; leia_string lin col buffer lexbuf )
-# 1426 "lexico.ml"
+# 1424 "lexico.ml"
 
   | 5 ->
 let
-# 177 "lexico.mll"
+# 160 "lexico.mll"
         c
-# 1432 "lexico.ml"
+# 1430 "lexico.ml"
 = Lexing.sub_lexeme_char lexbuf lexbuf.Lexing.lex_start_pos in
-# 177 "lexico.mll"
+# 160 "lexico.mll"
             ( Buffer.add_char buffer c; leia_string lin col buffer lexbuf)
-# 1436 "lexico.ml"
+# 1434 "lexico.ml"
 
   | 6 ->
-# 178 "lexico.mll"
+# 161 "lexico.mll"
        ( erro lin col "A string nao foi fechada")
-# 1441 "lexico.ml"
+# 1439 "lexico.ml"
 
   | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; 
       __ocaml_lex_leia_string_rec lin col buffer lexbuf __ocaml_lex_state

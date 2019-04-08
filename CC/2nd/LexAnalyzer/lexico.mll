@@ -1,6 +1,8 @@
 {
 	open Lexing
 	open Printf
+
+(* Increment the line and column counter *)
 	let incr_num_linha lexbuf =
 		let pos = lexbuf.lex_curr_p in
 		lexbuf.lex_curr_p <- { pos with
@@ -8,6 +10,7 @@
 			pos_bol = pos.pos_cnum;
 		}
 
+(* Generate the error messages highlighting the line and column *)
 let msg_erro lexbuf c =
 	let pos = lexbuf.lex_curr_p in
 	let lin = pos.pos_lnum
@@ -18,10 +21,7 @@ let msg_erro lexbuf c =
 		let mensagem = sprintf "%d-%d: %s" lin col msg in
 			failwith mensagem
 
-	let erroComentario lin col msg =
-		let mensagem = sprintf "%d-%d: %s" lin col msg in
-		failwith mensagem
-
+(* List of tokens *)
 type tokens = APAR 
 			|FPAR 
 			
@@ -29,11 +29,25 @@ type tokens = APAR
 			|VIRG 
 			|PONTOVIRG 
 			|PONTO 
+			|ACHAVE
+			|FCHAVE
 
 			(*Palavras Reservadas*)
 			|VAR 
 			|PRINT 
 			|LEIA 
+			|FUNCAO 
+			|IF
+			|ELIFE 
+			|ELSE 
+			|WHILE 
+			|FOR 
+			|DO 
+			|CASE 
+			|RETURN
+			|EOF
+			
+			(* Operadores *)
 			|MAIS 
 			|MENOS 
 			|DIVIDE 
@@ -52,25 +66,14 @@ type tokens = APAR
 			|MOD 
 			|OU 
 			|E 
-			|FUNCAO 
-			|IF
-			|ELIFE 
-			|ELSE 
-			|WHILE 
-			|FOR 
-			|DO 
-			|CASE 
-			|RETURN
-			|EOF
+			(* Literal Variables *)
 			|LITINT of int
 			|LITBOOL of bool
 			|LITREAL of float
 			|LITSTRING of string
 			|ID of string
-			|ACHAVE
-			|FCHAVE
-
 }
+
 let digito = ['0' - '9']
 let inteiro = digito+
 let real = digito* '.' digito+
@@ -96,16 +99,26 @@ rule token = parse
 	| '('			{ APAR }
 	| ')'			{ FPAR }
 
-	(*Separadores*)
+	(*Separators*)
 	| ','			{ VIRG }
 	| ';'			{ PONTOVIRG }
 	| '.'			{ PONTO }
 
-	(*Palavras Reservadas*)
+	(*Reservad Words*)
 	| "var"			{ VAR }
-	| "print" 		{ PRINT }
-	| "prompt"		{ LEIA }
-	(*Operadores*)
+	| "print" 	{ PRINT }
+	| "prompt"	{ LEIA }
+	|"function" { FUNCAO }
+	|"if"				{ IF }
+	|"else if" 	{ ELIFE }
+	|"else"			{ ELSE }
+	|"while"		{ WHILE }
+	|"for"			{ FOR }
+	|"do"				{ DO }
+	|"case"			{ CASE }
+	|"return"		{ RETURN}
+
+	(*Operators*)
 	| '+'			{ MAIS }
 	| '-'			{ MENOS }
 	| '/'			{ DIVIDE }
@@ -124,15 +137,8 @@ rule token = parse
 	|'%'			{ MOD }
 	|"||"			{ OU }
 	|"&&"			{ E }
-	|"function" 	{ FUNCAO }
-	|"if"			{ IF }
-	|"else if" 		{ ELIFE }
-	|"else"			{ ELSE }
-	|"while"		{ WHILE }
-	|"for"			{ FOR }
-	|"do"			{ DO }
-	|"case"			{ CASE }
-	|"return"		{ RETURN}
+	
+	(* Literal Variables *)
 	|inteiro as num { let numero = int_of_string num in LITINT numero }
 	|real as r 		{let r = float_of_string r in LITREAL r}
 	|identificador as id { ID id }
@@ -144,20 +150,22 @@ rule token = parse
 					LITSTRING str }
 	|_ as c 		{ failwith (msg_erro lexbuf c) }
 	|eof			{ EOF }
+
+(* Detect block comments *)
 and comentario_bloco lin col n = parse
 	"*/"			{ if n=0 then token lexbuf
 					else comentario_bloco lin col (n-1) lexbuf }
 	| "/*"			{ comentario_bloco lin col (n+1) lexbuf }
 	| novalinha 	{ incr_num_linha lexbuf; comentario_bloco lin col n lexbuf }
 	| _				{ comentario_bloco lin col n lexbuf }
-	| eof			{ erroComentario lin col "Comentario nao fechado" }
+	| eof			{ erro lin col "Comentario nao fechado" }
 
+(* Identify the string and ignore special characters *)
 and leia_string lin col buffer = parse
-'"'
-{ Buffer.contents buffer}
-	| "\\t"			{ Buffer.add_char buffer '\t'; leia_string lin col buffer lexbuf }
-	| "\\n"			{ Buffer.add_char buffer '\n'; leia_string lin col buffer lexbuf }
-	| '\\' '"' 		{ Buffer.add_char buffer '"'; leia_string lin col buffer lexbuf }
-	| '\\' '\\' 	{ Buffer.add_char buffer '\\'; leia_string lin col buffer lexbuf }
-	| _ as c 		{ Buffer.add_char buffer c; leia_string lin col buffer lexbuf}
-	| eof	{ erro lin col "A string nao foi fechada"}
+	'"'{ Buffer.contents buffer}
+		| "\\t"			{ Buffer.add_char buffer '\t'; leia_string lin col buffer lexbuf }
+		| "\\n"			{ Buffer.add_char buffer '\n'; leia_string lin col buffer lexbuf }
+		| '\\' '"' 		{ Buffer.add_char buffer '"'; leia_string lin col buffer lexbuf }
+		| '\\' '\\' 	{ Buffer.add_char buffer '\\'; leia_string lin col buffer lexbuf }
+		| _ as c 		{ Buffer.add_char buffer c; leia_string lin col buffer lexbuf}
+		| eof	{ erro lin col "A string nao foi fechada"}
