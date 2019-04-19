@@ -1,0 +1,12 @@
+# Nmap 7.40 scan initiated Thu Apr 18 23:24:20 2019 as: nmap -oN 7lagoas www.setelagoas.mg.gov.br
+Nmap scan report for www.setelagoas.mg.gov.br (191.235.90.215)
+Host is up (0.038s latency).
+Not shown: 995 filtered ports
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+443/tcp  open  https
+8001/tcp open  vcom-tunnel
+8002/tcp open  teradataordbms
+
+# Nmap done at Thu Apr 18 23:24:42 2019 -- 1 IP address (1 host up) scanned in 21.69 seconds

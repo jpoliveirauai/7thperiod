@@ -1,0 +1,22 @@
+nmap -v -O -oN 6.5.e www.portalestudante.ufu.br
+
+
+adjust_timeouts2: packet supposedly had rtt of -174086 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -174086 microseconds.  Ignoring time.
+Nmap scan report for www.portalestudante.ufu.br (200.19.146.143)
+Host is up (0.0047s latency).
+rDNS record for 200.19.146.143: portalaluno.dr.ufu.br
+Not shown: 997 filtered ports
+PORT     STATE  SERVICE
+80/tcp   open   http
+443/tcp  open   https
+8443/tcp closed https-alt
+Aggressive OS guesses: Linux 3.12 (94%), Linux 3.13 (94%), Linux 3.16 (94%), Linux 3.18 (94%), Linux 3.2 - 4.6 (94%), Linux 3.8 - 3.11 (94%), Linux 4.2 (93%), Crestron XPanel control system (93%), ASUS RT-N56U WAP (Linux 3.4) (92%), Linux 3.10 - 4.2 (90%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 100.760 days (since Wed Jan  2 00:16:23 2019)
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+Read data files from: /usr/bin/../share/nmap
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Apr 12 17:31:09 2019 -- 1 IP address (1 host up) scanned in 9.72 seconds

@@ -1,0 +1,48 @@
+1 - Por a VM estar em modo bridge, apenas configurar a máquina host foi suficiente
+
+2- Print feito
+
+3 - Print feito, o nmap descreve a versão, data e hora entre outras informações. Ele reportou 995 portas fechadas de 1000 portas escaneadas. As 5 portas encontradas foram:
+	- 21:   Referente à porta de ftp (File tranfer protocol)
+	- 22:   SSH para conexão remota à um servidor
+	- 23:   Porta do serviço de telnet
+	- 80:   Porta padrão usada para HTTP
+	- 3128: Porta para comunicação do squid, que é um servidor de Proxy
+
+4 - O servidor do site www.ufu.br só possui a porta 80 aberta, provavelmente por questões de projeto para melhorar a segurança
+
+5 - a) Print tirado
+
+b) Print tirado, somente aberta a porta 80
+
+c) Print tirado, não foram encontras portas UDP no servidor www.ufu.br
+
+d) Print tirado, mas o nmap relatou a imprecisão do scan de sistemas operacionais, como consta no print.
+
+e) ###ARQUIVO
+
+# Nmap 7.40 scan initiated Fri Apr 12 17:15:07 2019 as: nmap -v -O -oN scanUDp www.ufu.br
+Nmap scan report for www.ufu.br (200.19.146.58)
+Host is up (0.0075s latency).
+Other addresses for www.ufu.br (not scanned): 2001:12f0:618:160::58
+rDNS record for 200.19.146.58: bulma.dr.ufu.br
+Not shown: 999 filtered ports
+PORT   STATE SERVICE
+80/tcp open  http
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 3.10 - 4.2 (91%), Linux 3.12 (91%), Linux 3.13 (91%), Linux 3.13 or 4.2 (91%), Linux 3.16 (91%), Linux 3.16 - 4.6 (91%), Linux 3.2 - 4.6 (91%), Linux 3.8 - 3.11 (91%), Linux 4.4 (91%), Linux 3.18 (90%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 110.305 days (since Sun Dec 23 10:55:41 2018)
+TCP Sequence Prediction: Difficulty=261 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+Read data files from: /usr/bin/../share/nmap
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Apr 12 17:15:30 2019 -- 1 IP address (1 host up) scanned in 23.19 seconds
+
+ ###ARQUIVO
+
+
+
+
+7 - Possui muitas portas abertas, como podemos ver na imagem

@@ -1,0 +1,13 @@
+# Nmap 7.40 scan initiated Thu Apr 18 22:54:40 2019 as: nmap -oN udi www.uberlandia.mg.gov.br
+Nmap scan report for www.uberlandia.mg.gov.br (187.72.214.134)
+Host is up (0.091s latency).
+rDNS record for 187.72.214.134: 187-072-214-134.static.ctbctelecom.com.br
+Not shown: 995 filtered ports
+PORT    STATE  SERVICE
+80/tcp  open   http
+113/tcp closed ident
+443/tcp open   https
+465/tcp open   smtps
+995/tcp open   pop3s
+
+# Nmap done at Thu Apr 18 22:54:53 2019 -- 1 IP address (1 host up) scanned in 13.33 seconds

@@ -1,0 +1,11 @@
+# Nmap 7.40 scan initiated Thu Apr 18 22:20:44 2019 as: nmap -oN www.uberaba.mg.gov.br www.uberaba.mg.gov.br
+Nmap scan report for www.uberaba.mg.gov.br (200.170.153.67)
+Host is up (0.049s latency).
+rDNS record for 200.170.153.67: 200-170-153-067.static.ctbctelecom.com.br
+Not shown: 997 filtered ports
+PORT     STATE  SERVICE
+80/tcp   open   http
+113/tcp  closed ident
+8080/tcp open   http-proxy
+
+# Nmap done at Thu Apr 18 22:20:51 2019 -- 1 IP address (1 host up) scanned in 7.04 seconds

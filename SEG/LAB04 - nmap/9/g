@@ -1,0 +1,6 @@
+# Nmap 7.40 scan initiated Fri Apr 12 18:45:59 2019 as: nmap -p- -sU -oN ns1.dominios.uol.com.br ns1.dominios.uol.com.br
+Nmap scan report for ns1.dominios.uol.com.br (200.98.199.199)
+Host is up (0.029s latency).
+All 65535 scanned ports on ns1.dominios.uol.com.br (200.98.199.199) are open|filtered
+
+# Nmap done at Fri Apr 12 19:18:01 2019 -- 1 IP address (1 host up) scanned in 1921.95 seconds

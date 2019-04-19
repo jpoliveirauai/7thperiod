@@ -1,0 +1,20 @@
+# Nmap 7.40 scan initiated Thu Apr 18 23:06:10 2019 as: nmap -oN ituiutaba www.ituiutaba.mg.gov.br
+Nmap scan report for www.ituiutaba.mg.gov.br (191.252.133.205)
+Host is up (0.052s latency).
+Not shown: 987 filtered ports
+PORT      STATE  SERVICE
+21/tcp    open   ftp
+53/tcp    open   domain
+80/tcp    open   http
+110/tcp   open   pop3
+113/tcp   closed ident
+143/tcp   open   imap
+443/tcp   open   https
+465/tcp   open   smtps
+587/tcp   open   submission
+993/tcp   open   imaps
+995/tcp   open   pop3s
+3306/tcp  open   mysql
+60443/tcp closed unknown
+
+# Nmap done at Thu Apr 18 23:07:05 2019 -- 1 IP address (1 host up) scanned in 54.95 seconds

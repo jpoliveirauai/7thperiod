@@ -1,7 +1,7 @@
 function minhaFuncao(objeto) {
     objeto.ano = 1998;
     objeto.marca = "Toyota";
-  }
+  }@
   /*comentario 
             em 
           bloco

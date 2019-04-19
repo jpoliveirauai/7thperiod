@@ -1,0 +1,8 @@
+nmap -sU -oN 6.5.c www.portalestudante.ufu.br
+
+Nmap scan report for www.portalestudante.ufu.br (200.19.146.143)
+Host is up (0.0018s latency).
+rDNS record for 200.19.146.143: portalaluno.dr.ufu.br
+All 1000 scanned ports on www.portalestudante.ufu.br (200.19.146.143) are open|filtered
+
+# Nmap done at Fri Apr 12 17:28:54 2019 -- 1 IP address (1 host up) scanned in 21.49 seconds

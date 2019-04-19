@@ -1,0 +1,9 @@
+# Nmap 7.40 scan initiated Fri Apr 19 07:43:42 2019 as: nmap -oN 187.17.111.103 187.17.111.103
+Nmap scan report for 187.17.111.103
+Host is up (0.031s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+
+# Nmap done at Fri Apr 19 07:43:47 2019 -- 1 IP address (1 host up) scanned in 5.14 seconds
