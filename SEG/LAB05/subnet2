@@ -1,0 +1,275 @@
+INOC-DBA.uem.br(186.233.152.10)
+PORT STATE SERVICE
+80/tcp open http
+
+goldfish.nupelia.uem.br(186.233.152.12)
+PORT STATE SERVICE
+80/tcp open http
+
+fisica.dfi.uem.br(186.233.152.13)
+PORT STATE SERVICE
+80/tcp open http
+
+186.233.152.28
+PORT STATE SERVICE
+80/tcp open http
+
+salseiro.din.uem.br(186.233.152.34)
+PORT STATE SERVICE
+80/tcp open http
+
+186.233.152.39
+PORT STATE SERVICE
+80/tcp open http
+
+uem-deq-srv00.deq.uem.br(186.233.152.50)
+PORT STATE SERVICE
+80/tcp open http
+
+186.233.152.52
+PORT STATE SERVICE
+80/tcp open http
+
+pacs.hum.uem.br(186.233.152.70)
+PORT STATE SERVICE
+80/tcp open http
+
+shi.hum.uem.br(186.233.152.78)
+PORT STATE SERVICE
+80/tcp open http
+
+186.233.152.102
+PORT STATE SERVICE
+80/tcp open http
+
+clab1.uem.br(186.233.153.162)
+PORT STATE SERVICE
+80/tcp open http
+
+clab2.uem.br(186.233.153.163)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-Apache.pst.uem.br(186.233.153.176)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-DB.pst.uem.br(186.233.153.177)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-Des.pst.uem.br(186.233.153.178)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-Gestao.pst.uem.br(186.233.153.180)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-VM01.pst.uem.br(186.233.153.181)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-VM02.pst.uem.br(186.233.153.182)
+PORT STATE SERVICE
+80/tcp open http
+
+PST-VM05.pst.uem.br(186.233.153.185)
+PORT STATE SERVICE
+80/tcp open http
+
+ServerPFI.uem.br(186.233.153.195)
+PORT STATE SERVICE
+80/tcp open http
+
+lbiomic.uem.br(186.233.153.205)
+PORT STATE SERVICE
+80/tcp open http
+
+Armazem.uem.br(186.233.154.17)
+PORT STATE SERVICE
+80/tcp open http
+
+Suzuka.uem.br(186.233.154.23)
+PORT STATE SERVICE
+80/tcp open http
+
+Lattes-DB.uem.br(186.233.154.50)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.93)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.94)
+PORT STATE SERVICE
+80/tcp open http
+
+Monaco.uem.br(186.233.154.98)
+PORT STATE SERVICE
+80/tcp open http
+
+Sepang.uem.br(186.233.154.99)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.102)
+PORT STATE SERVICE
+80/tcp open http
+
+WebGateway.uem.br(186.233.154.103)
+PORT STATE SERVICE
+80/tcp open http
+
+WebGateway.uem.br(186.233.154.104)
+PORT STATE SERVICE
+80/tcp open http
+
+MoodleP.uem.br(186.233.154.105)
+PORT STATE SERVICE
+80/tcp open http
+
+Eventos.uem.br(186.233.154.108)
+PORT STATE SERVICE
+80/tcp open http
+
+CVUWeb01.uem.br(186.233.154.111)
+PORT STATE SERVICE
+80/tcp open http
+
+CVUWeb02.uem.br(186.233.154.112)
+PORT STATE SERVICE
+80/tcp open http
+
+CVUWeb03.uem.br(186.233.154.113)
+PORT STATE SERVICE
+80/tcp open http
+
+CVUWeb04.uem.br(186.233.154.114)
+PORT STATE SERVICE
+80/tcp open http
+
+CVUWeb05.uem.br(186.233.154.115)
+PORT STATE SERVICE
+80/tcp open http
+
+PECWeb01.uem.br(186.233.154.120)
+PORT STATE SERVICE
+80/tcp open http
+
+DAAWeb01.uem.br(186.233.154.121)
+PORT STATE SERVICE
+80/tcp open http
+
+PROWeb01.uem.br(186.233.154.122)
+PORT STATE SERVICE
+80/tcp open http
+
+TomCatSISAV.uem.br(186.233.154.125)
+PORT STATE SERVICE
+80/tcp open http
+
+ASPWeb01.uem.br(186.233.154.126)
+PORT STATE SERVICE
+80/tcp open http
+
+Portal.nead.uem.br(186.233.154.129)
+PORT STATE SERVICE
+80/tcp open http
+
+Moodle2.nead.uem.br(186.233.154.130)
+PORT STATE SERVICE
+80/tcp open http
+
+Moodle.nead.uem.br(186.233.154.131)
+PORT STATE SERVICE
+80/tcp open http
+
+Midias.nead.uem.br(186.233.154.132)
+PORT STATE SERVICE
+80/tcp open http
+
+PPG-SGP.uem.br(186.233.154.135)
+PORT STATE SERVICE
+80/tcp open http
+
+PPG-EAIC.uem.br(186.233.154.136)
+PORT STATE SERVICE
+80/tcp open http
+
+PPG-WebPHP.uem.br(186.233.154.137)
+PORT STATE SERVICE
+80/tcp open http
+
+ASC-WebPHP.uem.br(186.233.154.138)
+PORT STATE SERVICE
+80/tcp open http
+
+Moodle3.nead.uem.br(186.233.154.139)
+PORT STATE SERVICE
+80/tcp open http
+
+Jerez.uem.br(186.233.154.140)
+PORT STATE SERVICE
+80/tcp open http
+
+EduemOJS.uem.br(186.233.154.141)
+PORT STATE SERVICE
+80/tcp open http
+
+TomCat7Eduem.uem.br(186.233.154.142)
+PORT STATE SERVICE
+80/tcp open http
+
+BCE-NouRau.uem.br(186.233.154.147)
+PORT STATE SERVICE
+80/tcp open http
+
+BCE-DSpace.uem.br(186.233.154.149)
+PORT STATE SERVICE
+80/tcp open http
+
+Gales.uem.br(186.233.154.150)
+PORT STATE SERVICE
+80/tcp open http
+
+RedCap.uem.br(186.233.154.153)
+PORT STATE SERVICE
+80/tcp open http
+
+ZM.npd.uem.br(186.233.154.155)
+PORT STATE SERVICE
+80/tcp open http
+
+SITAV.pga.uem.br(186.233.154.156)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.161)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.162)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.163)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.164)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.165)
+PORT STATE SERVICE
+80/tcp open http
+
+Interlagos.uem.br(186.233.154.166)
+PORT STATE SERVICE
+80/tcp open http
+
+186.233.154.229
+PORT STATE SERVICE
+80/tcp open http

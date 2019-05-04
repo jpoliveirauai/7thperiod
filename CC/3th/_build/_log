@@ -1,0 +1,9 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules main.ml > main.ml.depends
+# Target: parser.mly.depends, tags: { extension:mly, file:parser.mly, infer, menhir_ocamldep, ocaml, ocamldep, quiet }
+menhir --raw-depend --ocamldep '/usr/bin/ocamldep -modules' parser.mly > parser.mly.depends
++ menhir --raw-depend --ocamldep '/usr/bin/ocamldep -modules' parser.mly > parser.mly.depends
+/bin/sh: 1: menhir: not found
+Command exited with code 127.
+# Compilation unsuccessful.
