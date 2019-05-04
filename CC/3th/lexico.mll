@@ -85,6 +85,7 @@ rule token = parse
 			| LITREAL of float
 			| LITSTRING of string
 			| ID of string
+			| VOID of void
 			| EOF
 }
 	(* Literal Variables *)

@@ -116,6 +116,7 @@ rule token = parse
 	|"for"			{ FOR }
 	|"do"				{ DO }
 	|"case"			{ CASE }
+	|"void"			{	VOID	}
 	|"return"		{ RETURN}
 
 	(*Operators*)
