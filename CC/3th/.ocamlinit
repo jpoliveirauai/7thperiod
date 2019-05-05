@@ -1,3 +1,17 @@
-#load "lexer.cmo";;
-#load "parser.cmo";;
-#use "main.ml";;
+let () =
+    try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")
+    with Not_found -> ()
+;;
+
+#use "topfind";;
+#require "menhirLib";;
+#directory "_build";;
+
+#load "erroSint.cmo";;
+#load "sintatico.cmo";;
+#load "lexico.cmo";;
+#load "ast.cmo";;
+#load "sintaticoTest.cmo";;
+
+open Ast
+open SintaticoTest

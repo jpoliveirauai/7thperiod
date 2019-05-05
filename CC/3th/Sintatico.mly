@@ -38,9 +38,9 @@
 %token MULTIPLICA DIVIDE
 %token INCREMENTO DECREMENTO
 %token MOD
+%token VOID
 %token MAIOR MENOR
 %token IGUAL DIFERENTE
-%token MAIOR MENOR
 %token MAIORIGUAL MENORIGUAL
 %token E OU
 %token FUNCAO
@@ -77,12 +77,13 @@ programa:
 declaracao: |VAR ids = separated_nonempty_list(VIRG, ID) PONTOVIRG {List.map (fun id -> DecVar (id,t)) ids }
 			|ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {List.map (fun id -> DecVar (id,t)) ids }
 
+tipo: t=tipo_simples { t }
+
 /* Definição de tipos      					- OOK */
-tipo_simples: 	|INTEGER 	{ TipoInt}
+tipo_simples: 	|INTEIRO 	{ TipoInt}
 				| REAL		{ TipoReal 		}
 				| STRING 	{ TipoString 	}
-				| CHAR		{ TipoChar 		}
-				| BOOLEAN 	{ TipoBool 		}
+				| BOOLEAN { TipoBool 		}
 				| VOID		{ TipoVoid 		}
 
 /* Definição de parâmetros 					- OOK */
@@ -102,7 +103,7 @@ comando: c = comando_atribuicao { c }
 		|c = comando_saida 		{ c } 
 		|c = comando_for 		{ c } 
 		|c = comando_while 		{ c } 
-		|c = comando_case		{ c } 
+		/* |c = comando_case		{ c }  */
 		|c = comando_funcao 	{ c }
 
 /* Definição de atribuição 					- OOK */
@@ -124,14 +125,14 @@ comando_entrada: LEIA APAR xs=expressao FPAR PONTOVIRG {CmdEntrada xs}
 comando_saida: PRINT APAR xs=separated_nonempty_list(VIRG, expressao) FPAR PONTOVIRG { CmdSaida xs }
 
 /* Comando For, não sei como fazer			- CORRIGIR*/
-comando_for: FOR APAR v=variavel ATRIB ex=expressao TO e=expressao DO BEGIN c= comando* END PONTOVIRG { CmdFor(v,ex,e,c) }
+comando_for: FOR APAR v=variavel ATRIB ex=expressao PONTOVIRG e=expressao PONTOVIRG FPAR ACHAVE
+							c= comando* FCHAVE { CmdFor(v,ex,e,c) }
 
 /* Comando WHILE 							- OOK */
 comando_while: WHILE APAR teste=expressao FPAR ACHAVE c=comando* FCHAVE {CmdWhile(teste,c)}
 
 /* Comando For, não sei como fazer			- CORRIGIR*/
-comando_case: CASE v=variavel OF c = cases+ default=option(ELSE cs=comando
-{cs}) END PONTOVIRG {CmdCase(v,c,default)} (* Shift-reduce a corrigir *)
+/* comando_case: CASE v=variavel OF c = cases+ default=option(ELSE cs=comando {cs}) END PONTOVIRG {CmdCase(v,c,default)} (* Shift-reduce a corrigir *) */
 expressao:
 			| v=variavel 						{ ExpVar v}
 			| i=LITINT							{ ExpInt i}

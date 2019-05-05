@@ -78,16 +78,7 @@ rule token = parse
 	|'%'			{ MOD }
 	|"||"			{ OU }
 	|"&&"			{ E }
-	|"function" { FUNCAO }
-	| PROCEDURE
-			| LITINT of int
-			| LITBOOL of bool
-			| LITREAL of float
-			| LITSTRING of string
-			| ID of string
-			| VOID of void
-			| EOF
-}
+
 	(* Literal Variables *)
 	|inteiro as num { let numero = int_of_string num in LITINT numero }
 	|real as r 		{let r = float_of_string r in LITREAL r}

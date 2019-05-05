@@ -1,9 +1,18 @@
 ### Starting build.
-# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep -modules main.ml > main.ml.depends
-# Target: parser.mly.depends, tags: { extension:mly, file:parser.mly, infer, menhir_ocamldep, ocaml, ocamldep, quiet }
-menhir --raw-depend --ocamldep '/usr/bin/ocamldep -modules' parser.mly > parser.mly.depends
-+ menhir --raw-depend --ocamldep '/usr/bin/ocamldep -modules' parser.mly > parser.mly.depends
-/bin/sh: 1: menhir: not found
-Command exited with code 127.
+# Target: sintaticoTest.ml.depends, tags: { extension:ml, file:sintaticoTest.ml, ocaml, ocamldep, package(menhirLib), quiet }
+ocamlfind ocamldep -package menhirLib -modules sintaticoTest.ml > sintaticoTest.ml.depends # cached
+# Target: Ast.ml.depends, tags: { extension:ml, file:Ast.ml, ocaml, ocamldep, package(menhirLib), quiet }
+ocamlfind ocamldep -package menhirLib -modules Ast.ml > Ast.ml.depends # cached
+# Target: Ast.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:Ast.cmo, file:Ast.ml, implem, ocaml, package(menhirLib), quiet }
+ocamlfind ocamlc -c -package menhirLib -o Ast.cmo Ast.ml # cached
+# Target: ErroSint.ml.depends, tags: { extension:ml, file:ErroSint.ml, ocaml, ocamldep, package(menhirLib), quiet }
+ocamlfind ocamldep -package menhirLib -modules ErroSint.ml > ErroSint.ml.depends # cached
+# Target: ErroSint.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:ErroSint.cmo, file:ErroSint.ml, implem, ocaml, package(menhirLib), quiet }
+ocamlfind ocamlc -c -package menhirLib -o ErroSint.cmo ErroSint.ml # cached
+# Target: Sintatico.mly.depends, tags: { extension:mly, file:Sintatico.mly, infer, menhir_ocamldep, ocaml, ocamldep, package(menhirLib), quiet }
+menhir --table --raw-depend --ocamldep 'ocamlfind ocamldep -modules' Sintatico.mly > Sintatico.mly.depends
++ menhir --table --raw-depend --ocamldep 'ocamlfind ocamldep -modules' Sintatico.mly > Sintatico.mly.depends
+File "Sintatico.mly", line 83, characters 16-23:
+Error: INTEIRO is undefined.
+Command exited with code 1.
 # Compilation unsuccessful.
