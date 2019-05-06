@@ -1,4 +1,0 @@
-#directory "_build";;
-#load "lexer.cmo";;
-#load "parser.cmo";;
-#use "main.ml";;
