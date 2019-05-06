@@ -4,10 +4,15 @@
 
 /* Literais */
 %token <int> LITINT
-%token <BOOL> LITBOOL
+%token <bool> LITBOOL
 %token <float> LITREAL
 %token <string> ID
 %token <string> LITSTRING
+%token INTEIRO
+%token STRING 
+%token CHAR
+%token BOOL
+
 
 /* Tokens de estrutura */
 %token DOISPONTOS
@@ -22,12 +27,17 @@
 %token VAR
 
 /* Tokens de condição */
-%token IF ELIFE ELSE
+%token IF ELSE
+%token ELIFE
 
 /* Tokens de repetição */
 %token DO
 %token WHILE
-%token FOR CASE 
+%token FOR
+%token DEFAULT
+%token BREAK
+%token CONTINUE
+%token SWITCH CASE
 
 /* Tokens de I/O */
 %token PRINT LEIA 
@@ -50,7 +60,9 @@
 
 %left OU
 %left E
-%left IGUAL DIFERENTE MAIOR MENOR MAIORIGUAL MENORIGUAL
+%left IGUAL DIFERENTE 
+%left MAIOR MENOR 
+%left MAIORIGUAL MENORIGUAL
 %left MAIS MENOS
 %left MULTIPLICA DIVIDE MODULO
 
@@ -58,58 +70,58 @@
 
 %%
 
-	/* 
-		Saber como estruturar o programa 
-		Como o programa não possui muita estrutura, isso dever ser melhorado
-	 */
-programa:
-	id = ID
-	fs = declaracao_funcao*
-	cs = comando*
-	EOF { Programa (fs, List.flatten ds, cs) }
-
-/* Declaração de variáveis */
-	/* 
-	
-	deve-se considerar que todos os comandos terminam em ponto e virgula
-	Deve-se adicionar todas as formas de se criar variáveis
-	 */
-declaracao: |VAR ids = separated_nonempty_list(VIRG, ID) PONTOVIRG {List.map (fun id -> DecVar (id,t)) ids }
-			|ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {List.map (fun id -> DecVar (id,t)) ids }
+/* Os programas em javascript possuem declaração de variáveis e funções misturados, bem como sua execução */
+programa:	cs = comando*
+			EOF { Programa (cs) }	
 
 tipo: t=tipo_simples { t }
 
 /* Definição de tipos      					- OOK */
-tipo_simples: 	|INTEIRO 	{ TipoInt}
-				| REAL		{ TipoReal 		}
-				| STRING 	{ TipoString 	}
-				| BOOLEAN { TipoBool 		}
-				| VOID		{ TipoVoid 		}
+tipo_simples: 	| LITINT 		{ TipoInt		}
+				| INTEIRO 		{ TipoInt		}
+				| LITREAL		{ TipoReal 		}
+				| LITSTRING 	{ TipoString 	}
+				| BOOL 			{ TipoBool 		}
+				| VOID			{ TipoVoid 		}
 
 /* Definição de parâmetros 					- OOK */
-parametros: ids = separated_list(VIRG, ID) DOISPONTOS t=tipo_simples { List.map (fun id -> Parametros (id,t)) ids }
 
-/* Definição de função 						- OOK */
-declaracao_funcao: 
-		|FUNCAO id = ID APAR p=parametros FPAR DOISPONTOS tp = tipo_simples ATRIB ACHAVE
-				bv = declaracao*
-				lc = comando*
-			FCHAVE {Funcao(id, p, tp,List.flatten bv, lc) }
+parametros: dec = separated_list(PONTOVIRG, declaracao_args) { List.flatten dec}
+
+declaracao_args: ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo {List.map (fun id -> DecVar (id,t)) ids}
+
+
+/* parametros: ids = separated_list(VIRG, option(ID)) DOISPONTOS t=tipo_simples {List.map (fun id -> Parametros (id,t)) ids } */
 
 /* DEFINIÇÃO DE COMANDOS 					- OOK */
-comando: c = comando_atribuicao { c } 
-		|c = comando_se 		{ c } 
-		|c = comando_entrada 	{ c } 
-		|c = comando_saida 		{ c } 
-		|c = comando_for 		{ c } 
-		|c = comando_while 		{ c } 
-		/* |c = comando_case		{ c }  */
-		|c = comando_funcao 	{ c }
+comando: c = comando_atribuicao 		{ c } 
+		|c = comando_se 				{ c } 
+		|c = comando_entrada 			{ c } 
+		|c = comando_saida 				{ c } 
+		|c = comando_for 				{ c } 
+		|c = comando_while 				{ c } 
+		|c = comando_case				{ c } 
+		|c = comando_funcao 			{ c }
+		|c = comando_declaracao			{ c }
+		|c = comando_declaracao_funcao	{ c }
+
+/* Definição de função 						- OOK */
+comando_declaracao_funcao: 
+		|FUNCAO id=ID APAR p=parametros FPAR DOISPONTOS tp = tipo_simples ATRIB 
+			ACHAVE
+				lc = comando*
+			FCHAVE {CmdFuncao(id, p, tp, lc) }
+
+/* Declaração de variávies					- OOK */
+comando_declaracao: |VAR ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {CmdDeclaracao(List.map (fun id -> DecVar (id,t)) ids)}
+					|ids =     separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {CmdDeclaracao(List.map (fun id -> DecVar (id,t)) ids)}
 
 /* Definição de atribuição 					- OOK */
 comando_atribuicao: v = variavel ATRIB e = expressao PONTOVIRG {CmdAtrib (v,e)}
-comando_funcao: id = ID APAR  p =option (arg=separated_nonempty_list(VIRG, expressao) {arg}) FPAR 
-					{CmdChamadaFuncao (id, p)}
+
+/* Chamdas de função						- OOK */
+comando_funcao: id = ID APAR  arg=separated_list(VIRG, expressao) FPAR PONTOVIRG
+					{CmdChamadaFuncao (id, arg)}
 
 /* Definição de IF		 					- OOK */
 comando_se:	IF APAR teste = expressao FPAR ACHAVE
@@ -124,38 +136,42 @@ comando_entrada: LEIA APAR xs=expressao FPAR PONTOVIRG {CmdEntrada xs}
 /* Comando saída 							- OOK */
 comando_saida: PRINT APAR xs=separated_nonempty_list(VIRG, expressao) FPAR PONTOVIRG { CmdSaida xs }
 
-/* Comando For, não sei como fazer			- CORRIGIR*/
-comando_for: FOR APAR v=variavel ATRIB ex=expressao PONTOVIRG e=expressao PONTOVIRG FPAR ACHAVE
-							c= comando* FCHAVE { CmdFor(v,ex,e,c) }
+/* Comando For								- OOK*/
+comando_for: FOR APAR v=variavel ATRIB ex=expressao PONTOVIRG e=expressao PONTOVIRG exp = expressao FPAR ACHAVE
+							c= comando* FCHAVE { CmdFor(v,ex,e,exp,c) }
 
 /* Comando WHILE 							- OOK */
 comando_while: WHILE APAR teste=expressao FPAR ACHAVE c=comando* FCHAVE {CmdWhile(teste,c)}
 
-/* Comando For, não sei como fazer			- CORRIGIR*/
-/* comando_case: CASE v=variavel OF c = cases+ default=option(ELSE cs=comando {cs}) END PONTOVIRG {CmdCase(v,c,default)} (* Shift-reduce a corrigir *) */
+/* Comando Case								- OOK*/
+comando_case: SWITCH APAR v = variavel FPAR ACHAVE 
+				cas = cases* FCHAVE {CmdCase(v,cas)}
+
+cases:  CASE e = expressao DOISPONTOS c = comando* BREAK PONTOVIRG {Case(e,c)}
+
 expressao:
-			| v=variavel 						{ ExpVar v}
-			| i=LITINT							{ ExpInt i}
-			| s=LITSTRING 						{ ExpString s }
-			| r=LITREAL							{ ExpReal r}
-			| c = comando_funcao				{ExpChamadaF c}
-			| e1=expressao op=oper e2=expressao { ExpOp (op, e1, e2) }
-			| APAR e=expressao FPAR 			{ Expar(e) }
+			| v=variavel 						{ ExpVar v				}
+			| i=LITINT							{ ExpInt i				}
+			| s=LITSTRING 						{ ExpString s 			}
+			| r=LITREAL							{ ExpReal r				}
+			| c = comando_funcao				{ ExpChamadaF c 		}
+			| e1=expressao op=oper e2=expressao { ExpOp (op, e1, e2) 	}
+			| APAR e=expressao FPAR 			{ Expar(e) 				}
 
 %inline oper:
-			| MAIS 				{ Mais }
-			| MENOS 			{ Menos }
-			| MULTIPLICA		{ Mult }
-			| DIVIDE			{ Div}
-			| MODULO			{ Mod}
-			| MENOR 			{ Menor }
-			| IGUAL 			{ Igual }
-			| MENORIGUAL 		{ MenorIgual }
-			| MAIORIGUAL 		{ MaiorIgual }
-			| DIFERENTE 		{ Difer }
-			| MAIOR 			{ Maior }
-			| E 				{ And }
-			| OU				{ Or }
+			| MAIS 				{ Mais 		}
+			| MENOS 			{ Menos 	}
+			| MULTIPLICA		{ Mult 		}
+			| DIVIDE			{ Div		}
+			| MOD				{ Mod		}
+			| MENOR 			{ Menor 	}
+			| IGUAL 			{ Igual 	}
+			| MENORIGUAL 		{ MenorIgual}
+			| MAIORIGUAL 		{ MaiorIgual}
+			| DIFERENTE 		{ Difer 	}
+			| MAIOR 			{ Maior 	}
+			| E 				{ And 		}
+			| OU				{ Or 		}
 
 variavel:
 			| x=ID				{ VarSimples x }

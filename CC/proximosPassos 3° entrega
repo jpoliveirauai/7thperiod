@@ -1,0 +1,5 @@
+- Corrigir no Sintatico.mly, juntar comando e declaração de variáveis, pois o javascript não os diferencia
+- Falta o ajuste de vários comandos do Javascript, como o for, o case, etc
+- Olhar e corrigir os arquivos ast e erroSint (Se necessário)
+- Editar o arquivo sintatico.msg com mensagens de erro
+

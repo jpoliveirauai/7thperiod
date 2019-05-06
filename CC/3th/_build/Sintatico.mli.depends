@@ -1,2 +1,1 @@
-Sintatico.ml: Ast Lexing List
 Sintatico.mli: Ast Lexing MenhirLib

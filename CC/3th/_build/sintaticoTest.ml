@@ -3,7 +3,6 @@ open Lexing
 open Ast
 open ErroSint (* nome do módulo contendo as mensagens de erro *)
 
-
 exception Erro_Sintatico of string
 
 module S = MenhirLib.General (* Streams *)
@@ -40,26 +39,17 @@ let parse_com_erro lexbuf =
 				try
 					Some (loop lexbuf (Sintatico.Incremental.programa lexbuf.lex_curr_p))
 				with
-					| Lexico.Erro msg -> printf "Erro lexico na %s:\n\t%s\n" (posicao lexbuf) msg;
-				None
-					| Erro_Sintatico msg -> printf "Erro sintático na %s %s\n" (posicao lexbuf) msg;
-				None
+					| Lexico.Erro msg -> printf "Erro lexico na %s:\n\t%s\n" (posicao lexbuf) msg; None
+					| Erro_Sintatico msg -> printf "Erro sintático na %s %s\n" (posicao lexbuf) msg; None
 
 let parse s =
 				let lexbuf = Lexing.from_string s in
 				let ast = parse_com_erro lexbuf in ast
 
-let parse_arq nome =
-				let ic = open_in nome in
-				let lexbuf = Lexing.from_channel ic in
-				let result = parse_com_erro lexbuf in
-				let _ = close_in ic in
-				match result with
-							| Some ast -> ast
-							| None -> failwith "A analise sintatica falhou"
-(* Para compilar:
-menhir -v --list-errors sintatico.mly > sintatico.msg
-menhir -v sintatico.mly --compile-errors sintatico.msg > erroSint.ml
-ocamlbuild -use-ocamlfind -use-menhir -menhir "menhir --table" -
-package menhirLib sintaticoTest.byte
-*)
+let parse_arq nome =	let ic = open_in nome in
+						let lexbuf = Lexing.from_channel ic in
+						let result = parse_com_erro lexbuf in
+						let _ = close_in ic in
+						match result with
+									| Some ast -> ast
+									| None -> failwith "A analise sintatica falhou"
