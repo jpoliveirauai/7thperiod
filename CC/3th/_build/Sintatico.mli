@@ -14,7 +14,7 @@ type token =
   | PONTO
   | OU
   | MULTIPLICA
-  | MOD
+  | MODULO
   | MENOS
   | MENORIGUAL
   | MENOR

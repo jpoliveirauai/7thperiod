@@ -2115,7 +2115,7 @@ and __ocaml_lex_token_rec lexbuf __ocaml_lex_state =
 
   | 42 ->
 # 82 "Lexico.mll"
-        ( MOD )
+        ( MODULO )
 # 2120 "Lexico.ml"
 
   | 43 ->

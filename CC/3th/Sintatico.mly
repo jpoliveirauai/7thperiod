@@ -1,5 +1,5 @@
 %{
-  open Ast
+	open Ast
 %}
 
 /* Literais */
@@ -47,7 +47,7 @@
 %token MAIS MENOS
 %token MULTIPLICA DIVIDE
 %token INCREMENTO DECREMENTO
-%token MOD
+%token MODULO
 %token VOID
 %token MAIOR MENOR
 %token IGUAL DIFERENTE
@@ -71,8 +71,10 @@
 %%
 
 /* Os programas em javascript possuem declaração de variáveis e funções misturados, bem como sua execução */
-programa:	cs = comando*
-			EOF { Programa (cs) }	
+programa:	fs = declaracao_funcao*
+			de = declaracao*
+			cs = comando*
+			EOF { Programa (fs, List.flatten de,cs) }	
 
 tipo: t=tipo_simples { t }
 
@@ -90,6 +92,14 @@ parametros: dec = separated_list(PONTOVIRG, declaracao_args) { List.flatten dec}
 
 declaracao_args: ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo {List.map (fun id -> DecVar (id,t)) ids}
 
+/* Definição de função 						- OOK */
+declaracao_funcao: 
+		|FUNCAO id=ID APAR p=parametros FPAR DOISPONTOS tp = tipo_simples ATRIB 
+			ACHAVE
+				dec = declaracao*
+				lc = comando*
+			FCHAVE {Funcao(id, p, tp , List.flatten dec, lc) }
+
 
 /* parametros: ids = separated_list(VIRG, option(ID)) DOISPONTOS t=tipo_simples {List.map (fun id -> Parametros (id,t)) ids } */
 
@@ -102,19 +112,17 @@ comando: c = comando_atribuicao 		{ c }
 		|c = comando_while 				{ c } 
 		|c = comando_case				{ c } 
 		|c = comando_funcao 			{ c }
-		|c = comando_declaracao			{ c }
-		|c = comando_declaracao_funcao	{ c }
+		|c = comando_return				{ c }
+		|c = comando_return_vazio		{ c }
 
-/* Definição de função 						- OOK */
-comando_declaracao_funcao: 
-		|FUNCAO id=ID APAR p=parametros FPAR DOISPONTOS tp = tipo_simples ATRIB 
-			ACHAVE
-				lc = comando*
-			FCHAVE {CmdFuncao(id, p, tp, lc) }
+/* Comandos return */
+comando_return: RETURN exp = expressao PONTOVIRG				{CmdRet (exp)}
+
+comando_return_vazio: RETURN PONTOVIRG					{CmdRetv}
+					 |RETURN APAR FPAR PONTOVIRG		{CmdRetv}
 
 /* Declaração de variávies					- OOK */
-comando_declaracao: |VAR ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {CmdDeclaracao(List.map (fun id -> DecVar (id,t)) ids)}
-					|ids =     separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {CmdDeclaracao(List.map (fun id -> DecVar (id,t)) ids)}
+declaracao: VAR ids = separated_nonempty_list(VIRG, ID) DOISPONTOS t = tipo PONTOVIRG {List.map (fun id -> DecVar (id,t)) ids }
 
 /* Definição de atribuição 					- OOK */
 comando_atribuicao: v = variavel ATRIB e = expressao PONTOVIRG {CmdAtrib (v,e)}
@@ -138,7 +146,8 @@ comando_saida: PRINT APAR xs=separated_nonempty_list(VIRG, expressao) FPAR PONTO
 
 /* Comando For								- OOK*/
 comando_for: FOR APAR v=variavel ATRIB ex=expressao PONTOVIRG e=expressao PONTOVIRG exp = expressao FPAR ACHAVE
-							c= comando* FCHAVE { CmdFor(v,ex,e,exp,c) }
+							c= comando* 
+						FCHAVE { CmdFor(v,ex,e,exp,c) }
 
 /* Comando WHILE 							- OOK */
 comando_while: WHILE APAR teste=expressao FPAR ACHAVE c=comando* FCHAVE {CmdWhile(teste,c)}
@@ -163,7 +172,7 @@ expressao:
 			| MENOS 			{ Menos 	}
 			| MULTIPLICA		{ Mult 		}
 			| DIVIDE			{ Div		}
-			| MOD				{ Mod		}
+			| MODULO			{ Mod		}
 			| MENOR 			{ Menor 	}
 			| IGUAL 			{ Igual 	}
 			| MENORIGUAL 		{ MenorIgual}

@@ -79,7 +79,7 @@ rule token = parse
 	|"--"			{ DECREMENTO }	
 	|"++"			{ INCREMENTO }	
 	|"="			{ ATRIB }
-	|'%'			{ MOD }
+	|'%'			{ MODULO }
 	|"||"			{ OU }
 	|"&&"			{ E }
 
