@@ -2,9 +2,9 @@
 (* This generated code requires the following version of MenhirLib: *)
 
 let () =
-  MenhirLib.StaticVersion.require_20160808
+  MenhirLib.StaticVersion.require_20180905
 
-module Basics = struct
+module MenhirBasics = struct
   
   exception Error
   
@@ -28,16 +28,36 @@ module Basics = struct
     | MAIS
     | MAIORIGUAL
     | MAIOR
-    | LITSTRING of (string)
-    | LITREAL of (float)
-    | LITINT of (int)
-    | LITBOOL of (bool)
+    | LITSTRING of (
+# 10 "Sintatico.mly"
+       (string)
+# 35 "Sintatico.ml"
+  )
+    | LITREAL of (
+# 8 "Sintatico.mly"
+       (float)
+# 40 "Sintatico.ml"
+  )
+    | LITINT of (
+# 6 "Sintatico.mly"
+       (int)
+# 45 "Sintatico.ml"
+  )
+    | LITBOOL of (
+# 7 "Sintatico.mly"
+       (bool)
+# 50 "Sintatico.ml"
+  )
     | LEIA
     | INTEIRO
     | INCREMENTO
     | IGUAL
     | IF
-    | ID of (string)
+    | ID of (
+# 9 "Sintatico.mly"
+       (string)
+# 60 "Sintatico.ml"
+  )
     | FUNCAO
     | FPAR
     | FOR
@@ -64,16 +84,20 @@ module Basics = struct
   
 end
 
-include Basics
+include MenhirBasics
 
 let _eRR =
-  Basics.Error
+  MenhirBasics.Error
+
+# 1 "Sintatico.mly"
   
 	open Ast
 
+# 97 "Sintatico.ml"
+
 module Tables = struct
   
-  include Basics
+  include MenhirBasics
   
   let token2terminal : token -> int =
     fun _tok ->
@@ -357,7 +381,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__6_ in
-        let _v : (Ast.cases) =                                                                    (Case(e,c)) in
+        let _v : (Ast.cases) = 
+# 159 "Sintatico.mly"
+                                                                   (Case(e,c))
+# 388 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -378,7 +406,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                                   ( c ) in
+        let _v : (Ast.comando) = 
+# 107 "Sintatico.mly"
+                                  ( c )
+# 413 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -399,7 +431,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                       ( c ) in
+        let _v : (Ast.comando) = 
+# 108 "Sintatico.mly"
+                      ( c )
+# 438 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -420,7 +456,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                           ( c ) in
+        let _v : (Ast.comando) = 
+# 109 "Sintatico.mly"
+                          ( c )
+# 463 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -441,7 +481,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                          ( c ) in
+        let _v : (Ast.comando) = 
+# 110 "Sintatico.mly"
+                         ( c )
+# 488 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -462,7 +506,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                        ( c ) in
+        let _v : (Ast.comando) = 
+# 111 "Sintatico.mly"
+                       ( c )
+# 513 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -483,7 +531,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                          ( c ) in
+        let _v : (Ast.comando) = 
+# 112 "Sintatico.mly"
+                         ( c )
+# 538 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -504,7 +556,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                        ( c ) in
+        let _v : (Ast.comando) = 
+# 113 "Sintatico.mly"
+                       ( c )
+# 563 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -525,7 +581,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                          ( c ) in
+        let _v : (Ast.comando) = 
+# 114 "Sintatico.mly"
+                         ( c )
+# 588 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -546,7 +606,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                          ( c ) in
+        let _v : (Ast.comando) = 
+# 115 "Sintatico.mly"
+                         ( c )
+# 613 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -567,7 +631,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.comando) =                              ( c ) in
+        let _v : (Ast.comando) = 
+# 116 "Sintatico.mly"
+                             ( c )
+# 638 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -606,7 +674,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_v_ in
         let _endpos = _endpos__4_ in
-        let _v : (Ast.comando) =                                                                (CmdAtrib (v,e)) in
+        let _v : (Ast.comando) = 
+# 128 "Sintatico.mly"
+                                                               (CmdAtrib (v,e))
+# 681 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -663,7 +735,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__7_ in
-        let _v : (Ast.comando) =                         (CmdCase(v,cas)) in
+        let _v : (Ast.comando) = 
+# 157 "Sintatico.mly"
+                        (CmdCase(v,cas))
+# 742 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -708,7 +784,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__5_ in
-        let _v : (Ast.comando) =                                                        (CmdEntrada xs) in
+        let _v : (Ast.comando) = 
+# 142 "Sintatico.mly"
+                                                       (CmdEntrada xs)
+# 791 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -801,7 +881,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__13_ in
-        let _v : (Ast.comando) =              ( CmdFor(v,ex,e,exp,c) ) in
+        let _v : (Ast.comando) = 
+# 150 "Sintatico.mly"
+             ( CmdFor(v,ex,e,exp,c) )
+# 888 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -842,15 +926,27 @@ module Tables = struct
         let _4 : unit = Obj.magic _4 in
         let xs0 : (Ast.expressoes) = Obj.magic xs0 in
         let _2 : unit = Obj.magic _2 in
-        let id : (string) = Obj.magic id in
+        let id : (
+# 9 "Sintatico.mly"
+       (string)
+# 933 "Sintatico.ml"
+        ) = Obj.magic id in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_id_ in
         let _endpos = _endpos__5_ in
         let _v : (Ast.comando) = let arg =
           let xs = xs0 in
-              ( xs )
+          
+# 220 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( xs )
+# 943 "Sintatico.ml"
+          
         in
-             (CmdChamadaFuncao (id, arg)) in
+        
+# 132 "Sintatico.mly"
+     (CmdChamadaFuncao (id, arg))
+# 949 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -883,7 +979,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__3_ in
-        let _v : (Ast.comando) =                                                     (CmdRet (exp)) in
+        let _v : (Ast.comando) = 
+# 119 "Sintatico.mly"
+                                                    (CmdRet (exp))
+# 986 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -910,7 +1010,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__2_ in
-        let _v : (Ast.comando) =                                            (CmdRetv) in
+        let _v : (Ast.comando) = 
+# 121 "Sintatico.mly"
+                                           (CmdRetv)
+# 1017 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -949,7 +1053,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__4_ in
-        let _v : (Ast.comando) =                                    (CmdRetv) in
+        let _v : (Ast.comando) = 
+# 122 "Sintatico.mly"
+                                   (CmdRetv)
+# 1060 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -994,7 +1102,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__5_ in
-        let _v : (Ast.comando) =                                                                                      ( CmdSaida xs ) in
+        let _v : (Ast.comando) = 
+# 145 "Sintatico.mly"
+                                                                                     ( CmdSaida xs )
+# 1109 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1057,7 +1169,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos_senao_ in
-        let _v : (Ast.comando) =                                                         (CmdSe (teste, entao, senao)) in
+        let _v : (Ast.comando) = 
+# 138 "Sintatico.mly"
+                                                        (CmdSe (teste, entao, senao))
+# 1176 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1114,7 +1230,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__7_ in
-        let _v : (Ast.comando) =                                                                         (CmdWhile(teste,c)) in
+        let _v : (Ast.comando) = 
+# 153 "Sintatico.mly"
+                                                                        (CmdWhile(teste,c))
+# 1237 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1159,7 +1279,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__5_ in
-        let _v : (Ast.declaracao list) =                                                                                       (List.map (fun id -> DecVar (id,t)) ids ) in
+        let _v : (Ast.declaracao list) = 
+# 125 "Sintatico.mly"
+                                                                                      (List.map (fun id -> DecVar (id,t)) ids )
+# 1286 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1192,7 +1316,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_ids_ in
         let _endpos = _endpos_t_ in
-        let _v : (Ast.declaracao list) =                                                                              (List.map (fun id -> DecVar (id,t)) ids) in
+        let _v : (Ast.declaracao list) = 
+# 93 "Sintatico.mly"
+                                                                             (List.map (fun id -> DecVar (id,t)) ids)
+# 1323 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1274,12 +1402,20 @@ module Tables = struct
         let _5 : unit = Obj.magic _5 in
         let p : (Ast.parametros) = Obj.magic p in
         let _3 : unit = Obj.magic _3 in
-        let id : (string) = Obj.magic id in
+        let id : (
+# 9 "Sintatico.mly"
+       (string)
+# 1409 "Sintatico.ml"
+        ) = Obj.magic id in
         let _1 : unit = Obj.magic _1 in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__12_ in
-        let _v : (Ast.decfuncao) =           (Funcao(id, p, tp , List.flatten dec, lc) ) in
+        let _v : (Ast.decfuncao) = 
+# 101 "Sintatico.mly"
+          (Funcao(id, p, tp , List.flatten dec, lc) )
+# 1418 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1300,7 +1436,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_v_ in
         let _endpos = _endpos_v_ in
-        let _v : (Ast.expressao) =                       ( ExpVar v				) in
+        let _v : (Ast.expressao) = 
+# 162 "Sintatico.mly"
+                      ( ExpVar v				)
+# 1443 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1317,11 +1457,19 @@ module Tables = struct
           MenhirLib.EngineTypes.endp = _endpos_i_;
           MenhirLib.EngineTypes.next = _menhir_stack;
         } = _menhir_stack in
-        let i : (int) = Obj.magic i in
+        let i : (
+# 6 "Sintatico.mly"
+       (int)
+# 1464 "Sintatico.ml"
+        ) = Obj.magic i in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_i_ in
         let _endpos = _endpos_i_ in
-        let _v : (Ast.expressao) =                     ( ExpInt i				) in
+        let _v : (Ast.expressao) = 
+# 163 "Sintatico.mly"
+                    ( ExpInt i				)
+# 1472 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1338,11 +1486,19 @@ module Tables = struct
           MenhirLib.EngineTypes.endp = _endpos_s_;
           MenhirLib.EngineTypes.next = _menhir_stack;
         } = _menhir_stack in
-        let s : (string) = Obj.magic s in
+        let s : (
+# 10 "Sintatico.mly"
+       (string)
+# 1493 "Sintatico.ml"
+        ) = Obj.magic s in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_s_ in
         let _endpos = _endpos_s_ in
-        let _v : (Ast.expressao) =                        ( ExpString s 			) in
+        let _v : (Ast.expressao) = 
+# 164 "Sintatico.mly"
+                       ( ExpString s 			)
+# 1501 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1359,11 +1515,19 @@ module Tables = struct
           MenhirLib.EngineTypes.endp = _endpos_r_;
           MenhirLib.EngineTypes.next = _menhir_stack;
         } = _menhir_stack in
-        let r : (float) = Obj.magic r in
+        let r : (
+# 8 "Sintatico.mly"
+       (float)
+# 1522 "Sintatico.ml"
+        ) = Obj.magic r in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_r_ in
         let _endpos = _endpos_r_ in
-        let _v : (Ast.expressao) =                      ( ExpReal r				) in
+        let _v : (Ast.expressao) = 
+# 165 "Sintatico.mly"
+                     ( ExpReal r				)
+# 1530 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1384,7 +1548,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_c_ in
         let _endpos = _endpos_c_ in
-        let _v : (Ast.expressao) =                            ( ExpChamadaF c 		) in
+        let _v : (Ast.expressao) = 
+# 166 "Sintatico.mly"
+                           ( ExpChamadaF c 		)
+# 1555 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1419,9 +1587,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Mais 		)
+          
+# 171 "Sintatico.mly"
+              ( Mais 		)
+# 1594 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1600 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1456,9 +1632,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Menos 	)
+          
+# 172 "Sintatico.mly"
+              ( Menos 	)
+# 1639 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1645 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1493,9 +1677,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                           ( Mult 		)
+          
+# 173 "Sintatico.mly"
+                 ( Mult 		)
+# 1684 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1690 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1530,9 +1722,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Div		)
+          
+# 174 "Sintatico.mly"
+              ( Div		)
+# 1729 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1735 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1567,9 +1767,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Mod		)
+          
+# 175 "Sintatico.mly"
+              ( Mod		)
+# 1774 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1780 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1604,9 +1812,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Menor 	)
+          
+# 176 "Sintatico.mly"
+              ( Menor 	)
+# 1819 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1825 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1641,9 +1857,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Igual 	)
+          
+# 177 "Sintatico.mly"
+              ( Igual 	)
+# 1864 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1870 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1678,9 +1902,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                            ( MenorIgual)
+          
+# 178 "Sintatico.mly"
+                  ( MenorIgual)
+# 1909 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1915 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1715,9 +1947,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                            ( MaiorIgual)
+          
+# 179 "Sintatico.mly"
+                  ( MaiorIgual)
+# 1954 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 1960 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1752,9 +1992,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                           ( Difer 	)
+          
+# 180 "Sintatico.mly"
+                 ( Difer 	)
+# 1999 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 2005 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1789,9 +2037,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                        ( Maior 	)
+          
+# 181 "Sintatico.mly"
+              ( Maior 	)
+# 2044 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 2050 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1826,9 +2082,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                     ( And 		)
+          
+# 182 "Sintatico.mly"
+           ( And 		)
+# 2089 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 2095 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1863,9 +2127,17 @@ module Tables = struct
         let _endpos = _endpos_e2_ in
         let _v : (Ast.expressao) = let op =
           let _1 = _10 in
-                     ( Or 		)
+          
+# 183 "Sintatico.mly"
+           ( Or 		)
+# 2134 "Sintatico.ml"
+          
         in
-                                               ( ExpOp (op, e1, e2) 	) in
+        
+# 167 "Sintatico.mly"
+                                       ( ExpOp (op, e1, e2) 	)
+# 2140 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1898,7 +2170,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__3_ in
-        let _v : (Ast.expressao) =                               ( Expar(e) 				) in
+        let _v : (Ast.expressao) = 
+# 168 "Sintatico.mly"
+                              ( Expar(e) 				)
+# 2177 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1912,7 +2188,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.cases list) =     ( [] ) in
+        let _v : (Ast.cases list) = 
+# 199 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [] )
+# 2195 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1939,7 +2219,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.cases list) =     ( x :: xs ) in
+        let _v : (Ast.cases list) = 
+# 201 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2226 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1953,7 +2237,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.comandos) =     ( [] ) in
+        let _v : (Ast.comandos) = 
+# 199 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [] )
+# 2244 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1980,7 +2268,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.comandos) =     ( x :: xs ) in
+        let _v : (Ast.comandos) = 
+# 201 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2275 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -1994,7 +2286,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.declaracao list list) =     ( [] ) in
+        let _v : (Ast.declaracao list list) = 
+# 199 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [] )
+# 2293 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2021,7 +2317,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.declaracao list list) =     ( x :: xs ) in
+        let _v : (Ast.declaracao list list) = 
+# 201 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2324 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2035,7 +2335,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.funcoes) =     ( [] ) in
+        let _v : (Ast.funcoes) = 
+# 199 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [] )
+# 2342 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2062,7 +2366,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.funcoes) =     ( x :: xs ) in
+        let _v : (Ast.funcoes) = 
+# 201 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2373 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2076,7 +2384,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.declaracao list list) =     ( [] ) in
+        let _v : (Ast.declaracao list list) = 
+# 142 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [] )
+# 2391 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2097,7 +2409,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.declaracao list list) =     ( x ) in
+        let _v : (Ast.declaracao list list) = 
+# 144 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x )
+# 2416 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2111,7 +2427,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.expressoes) =     ( [] ) in
+        let _v : (Ast.expressoes) = 
+# 142 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [] )
+# 2434 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2132,7 +2452,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.expressoes) =     ( x ) in
+        let _v : (Ast.expressoes) = 
+# 144 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x )
+# 2459 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2146,7 +2470,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _endpos = _startpos in
-        let _v : (Ast.comandos option) =     ( None ) in
+        let _v : (Ast.comandos option) = 
+# 114 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( None )
+# 2477 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2190,9 +2518,17 @@ module Tables = struct
           let cs = cs0 in
           let _2 = _20 in
           let _1 = _10 in
-                                                           (cs)
+          
+# 138 "Sintatico.mly"
+                                                 (cs)
+# 2525 "Sintatico.ml"
+          
         in
-            ( Some x ) in
+        
+# 116 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( Some x )
+# 2531 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2215,9 +2551,17 @@ module Tables = struct
         let _endpos = _endpos_xs0_ in
         let _v : (Ast.parametros) = let dec =
           let xs = xs0 in
-              ( xs )
+          
+# 220 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( xs )
+# 2558 "Sintatico.ml"
+          
         in
-                                                                     ( List.flatten dec) in
+        
+# 91 "Sintatico.mly"
+                                                             ( List.flatten dec)
+# 2564 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2256,7 +2600,15 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_fs_ in
         let _endpos = _endpos__4_ in
-        let _v : (Ast.programa) =        ( Programa (fs, List.flatten de,cs) ) in
+        let _v : (
+# 69 "Sintatico.mly"
+       (Ast.programa)
+# 2607 "Sintatico.ml"
+        ) = 
+# 77 "Sintatico.mly"
+       ( Programa (fs, List.flatten de,cs) )
+# 2611 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2277,7 +2629,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.declaracao list list) =     ( [ x ] ) in
+        let _v : (Ast.declaracao list list) = 
+# 229 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [ x ] )
+# 2636 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2310,7 +2666,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.declaracao list list) =     ( x :: xs ) in
+        let _v : (Ast.declaracao list list) = 
+# 231 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2673 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2327,11 +2687,19 @@ module Tables = struct
           MenhirLib.EngineTypes.endp = _endpos_x_;
           MenhirLib.EngineTypes.next = _menhir_stack;
         } = _menhir_stack in
-        let x : (string) = Obj.magic x in
+        let x : (
+# 9 "Sintatico.mly"
+       (string)
+# 2694 "Sintatico.ml"
+        ) = Obj.magic x in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.ident list) =     ( [ x ] ) in
+        let _v : (Ast.ident list) = 
+# 229 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [ x ] )
+# 2702 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2360,11 +2728,19 @@ module Tables = struct
         } = _menhir_stack in
         let xs : (Ast.ident list) = Obj.magic xs in
         let _2 : unit = Obj.magic _2 in
-        let x : (string) = Obj.magic x in
+        let x : (
+# 9 "Sintatico.mly"
+       (string)
+# 2735 "Sintatico.ml"
+        ) = Obj.magic x in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.ident list) =     ( x :: xs ) in
+        let _v : (Ast.ident list) = 
+# 231 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2743 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2385,7 +2761,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.expressoes) =     ( [ x ] ) in
+        let _v : (Ast.expressoes) = 
+# 229 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( [ x ] )
+# 2768 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2418,7 +2798,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_xs_ in
-        let _v : (Ast.expressoes) =     ( x :: xs ) in
+        let _v : (Ast.expressoes) = 
+# 231 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
+    ( x :: xs )
+# 2805 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2439,7 +2823,11 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_t_ in
         let _endpos = _endpos_t_ in
-        let _v : (Ast.tipo) =                      ( t ) in
+        let _v : (Ast.tipo) = 
+# 79 "Sintatico.mly"
+                     ( t )
+# 2830 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2456,74 +2844,19 @@ module Tables = struct
           MenhirLib.EngineTypes.endp = _endpos__1_;
           MenhirLib.EngineTypes.next = _menhir_stack;
         } = _menhir_stack in
-        let _1 : (int) = Obj.magic _1 in
+        let _1 : (
+# 6 "Sintatico.mly"
+       (int)
+# 2851 "Sintatico.ml"
+        ) = Obj.magic _1 in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__1_ in
-        let _v : (Ast.tipo) =                           ( TipoInt		) in
-        {
-          MenhirLib.EngineTypes.state = _menhir_s;
-          MenhirLib.EngineTypes.semv = Obj.repr _v;
-          MenhirLib.EngineTypes.startp = _startpos;
-          MenhirLib.EngineTypes.endp = _endpos;
-          MenhirLib.EngineTypes.next = _menhir_stack;
-        });
-      (fun _menhir_env ->
-        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
-        let {
-          MenhirLib.EngineTypes.state = _menhir_s;
-          MenhirLib.EngineTypes.semv = _1;
-          MenhirLib.EngineTypes.startp = _startpos__1_;
-          MenhirLib.EngineTypes.endp = _endpos__1_;
-          MenhirLib.EngineTypes.next = _menhir_stack;
-        } = _menhir_stack in
-        let _1 : unit = Obj.magic _1 in
-        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
-        let _startpos = _startpos__1_ in
-        let _endpos = _endpos__1_ in
-        let _v : (Ast.tipo) =                 ( TipoInt		) in
-        {
-          MenhirLib.EngineTypes.state = _menhir_s;
-          MenhirLib.EngineTypes.semv = Obj.repr _v;
-          MenhirLib.EngineTypes.startp = _startpos;
-          MenhirLib.EngineTypes.endp = _endpos;
-          MenhirLib.EngineTypes.next = _menhir_stack;
-        });
-      (fun _menhir_env ->
-        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
-        let {
-          MenhirLib.EngineTypes.state = _menhir_s;
-          MenhirLib.EngineTypes.semv = _1;
-          MenhirLib.EngineTypes.startp = _startpos__1_;
-          MenhirLib.EngineTypes.endp = _endpos__1_;
-          MenhirLib.EngineTypes.next = _menhir_stack;
-        } = _menhir_stack in
-        let _1 : (float) = Obj.magic _1 in
-        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
-        let _startpos = _startpos__1_ in
-        let _endpos = _endpos__1_ in
-        let _v : (Ast.tipo) =                ( TipoReal 		) in
-        {
-          MenhirLib.EngineTypes.state = _menhir_s;
-          MenhirLib.EngineTypes.semv = Obj.repr _v;
-          MenhirLib.EngineTypes.startp = _startpos;
-          MenhirLib.EngineTypes.endp = _endpos;
-          MenhirLib.EngineTypes.next = _menhir_stack;
-        });
-      (fun _menhir_env ->
-        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
-        let {
-          MenhirLib.EngineTypes.state = _menhir_s;
-          MenhirLib.EngineTypes.semv = _1;
-          MenhirLib.EngineTypes.startp = _startpos__1_;
-          MenhirLib.EngineTypes.endp = _endpos__1_;
-          MenhirLib.EngineTypes.next = _menhir_stack;
-        } = _menhir_stack in
-        let _1 : (string) = Obj.magic _1 in
-        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
-        let _startpos = _startpos__1_ in
-        let _endpos = _endpos__1_ in
-        let _v : (Ast.tipo) =                  ( TipoString 	) in
+        let _v : (Ast.tipo) = 
+# 82 "Sintatico.mly"
+                          ( TipoInt		)
+# 2859 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2544,7 +2877,69 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__1_ in
-        let _v : (Ast.tipo) =               ( TipoBool 		) in
+        let _v : (Ast.tipo) = 
+# 83 "Sintatico.mly"
+                ( TipoInt		)
+# 2884 "Sintatico.ml"
+         in
+        {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = Obj.repr _v;
+          MenhirLib.EngineTypes.startp = _startpos;
+          MenhirLib.EngineTypes.endp = _endpos;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        });
+      (fun _menhir_env ->
+        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
+        let {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = _1;
+          MenhirLib.EngineTypes.startp = _startpos__1_;
+          MenhirLib.EngineTypes.endp = _endpos__1_;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        } = _menhir_stack in
+        let _1 : (
+# 8 "Sintatico.mly"
+       (float)
+# 2905 "Sintatico.ml"
+        ) = Obj.magic _1 in
+        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
+        let _startpos = _startpos__1_ in
+        let _endpos = _endpos__1_ in
+        let _v : (Ast.tipo) = 
+# 84 "Sintatico.mly"
+               ( TipoReal 		)
+# 2913 "Sintatico.ml"
+         in
+        {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = Obj.repr _v;
+          MenhirLib.EngineTypes.startp = _startpos;
+          MenhirLib.EngineTypes.endp = _endpos;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        });
+      (fun _menhir_env ->
+        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
+        let {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = _1;
+          MenhirLib.EngineTypes.startp = _startpos__1_;
+          MenhirLib.EngineTypes.endp = _endpos__1_;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        } = _menhir_stack in
+        let _1 : (
+# 10 "Sintatico.mly"
+       (string)
+# 2934 "Sintatico.ml"
+        ) = Obj.magic _1 in
+        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
+        let _startpos = _startpos__1_ in
+        let _endpos = _endpos__1_ in
+        let _v : (Ast.tipo) = 
+# 85 "Sintatico.mly"
+                 ( TipoString 	)
+# 2942 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2565,7 +2960,36 @@ module Tables = struct
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos__1_ in
         let _endpos = _endpos__1_ in
-        let _v : (Ast.tipo) =              ( TipoVoid 		) in
+        let _v : (Ast.tipo) = 
+# 86 "Sintatico.mly"
+              ( TipoBool 		)
+# 2967 "Sintatico.ml"
+         in
+        {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = Obj.repr _v;
+          MenhirLib.EngineTypes.startp = _startpos;
+          MenhirLib.EngineTypes.endp = _endpos;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        });
+      (fun _menhir_env ->
+        let _menhir_stack = _menhir_env.MenhirLib.EngineTypes.stack in
+        let {
+          MenhirLib.EngineTypes.state = _menhir_s;
+          MenhirLib.EngineTypes.semv = _1;
+          MenhirLib.EngineTypes.startp = _startpos__1_;
+          MenhirLib.EngineTypes.endp = _endpos__1_;
+          MenhirLib.EngineTypes.next = _menhir_stack;
+        } = _menhir_stack in
+        let _1 : unit = Obj.magic _1 in
+        let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
+        let _startpos = _startpos__1_ in
+        let _endpos = _endpos__1_ in
+        let _v : (Ast.tipo) = 
+# 87 "Sintatico.mly"
+             ( TipoVoid 		)
+# 2992 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2582,11 +3006,19 @@ module Tables = struct
           MenhirLib.EngineTypes.endp = _endpos_x_;
           MenhirLib.EngineTypes.next = _menhir_stack;
         } = _menhir_stack in
-        let x : (string) = Obj.magic x in
+        let x : (
+# 9 "Sintatico.mly"
+       (string)
+# 3013 "Sintatico.ml"
+        ) = Obj.magic x in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_x_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.variavel) =              ( VarSimples x ) in
+        let _v : (Ast.variavel) = 
+# 186 "Sintatico.mly"
+             ( VarSimples x )
+# 3021 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2613,13 +3045,21 @@ module Tables = struct
             };
           };
         } = _menhir_stack in
-        let x : (string) = Obj.magic x in
+        let x : (
+# 9 "Sintatico.mly"
+       (string)
+# 3052 "Sintatico.ml"
+        ) = Obj.magic x in
         let _2 : unit = Obj.magic _2 in
         let v : (Ast.variavel) = Obj.magic v in
         let _endpos__0_ = _menhir_stack.MenhirLib.EngineTypes.endp in
         let _startpos = _startpos_v_ in
         let _endpos = _endpos_x_ in
-        let _v : (Ast.variavel) =                            ( VarCampo (v,x) ) in
+        let _v : (Ast.variavel) = 
+# 187 "Sintatico.mly"
+                           ( VarCampo (v,x) )
+# 3062 "Sintatico.ml"
+         in
         {
           MenhirLib.EngineTypes.state = _menhir_s;
           MenhirLib.EngineTypes.semv = Obj.repr _v;
@@ -2636,7 +3076,9 @@ end
 
 module MenhirInterpreter = struct
   
-  module TI = MenhirLib.TableInterpreter.Make (Tables)
+  module ET = MenhirLib.TableInterpreter.MakeEngineTable (Tables)
+  
+  module TI = MenhirLib.Engine.Make (ET)
   
   include TI
   
@@ -2644,14 +3086,25 @@ end
 
 let programa =
   fun lexer lexbuf ->
-    (Obj.magic (MenhirInterpreter.entry 0 lexer lexbuf) : (Ast.programa))
+    (Obj.magic (MenhirInterpreter.entry 0 lexer lexbuf) : (
+# 69 "Sintatico.mly"
+       (Ast.programa)
+# 3093 "Sintatico.ml"
+    ))
 
 module Incremental = struct
   
   let programa =
     fun initial_position ->
-      (Obj.magic (MenhirInterpreter.start 0 initial_position) : (Ast.programa) MenhirInterpreter.checkpoint)
+      (Obj.magic (MenhirInterpreter.start 0 initial_position) : (
+# 69 "Sintatico.mly"
+       (Ast.programa)
+# 3103 "Sintatico.ml"
+      ) MenhirInterpreter.checkpoint)
   
 end
+
+# 233 "/home/jpveira/.opam/4.07.0/lib/menhir/standard.mly"
   
 
+# 3111 "Sintatico.ml"
