@@ -14,8 +14,7 @@ let posicao lexbuf =
 		and col = pos.pos_cnum - pos.pos_bol - 1 in
 		sprintf "linha %d, coluna %d" lin col
 
-(* [pilha checkpoint] extrai a pilha do autômato LR(1) contida em
-checkpoint *)
+(* [pilha checkpoint] extrai a pilha do autômato LR(1) contida em checkpoint *)
 let pilha checkpoint = 	 match checkpoint with
 						| I.HandlingError amb -> I.stack amb
 						| _ -> assert false (* Isso não pode acontecer *)

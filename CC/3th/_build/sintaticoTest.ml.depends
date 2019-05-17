@@ -1,1 +1,0 @@
-sintaticoTest.ml: Ast ErroSint Lazy Lexico Lexing MenhirLib Printf Sintatico

@@ -21,7 +21,7 @@ let message =
     | 37 ->
         "Expression expected\n"
     | 0 ->
-        "Unexpected void\n"
+        "Unexpected expression\n"
     | 24 ->
         "Variable expected\n"
     | 4 ->
@@ -33,9 +33,9 @@ let message =
     | 27 ->
         "';' expected\n"
     | 158 ->
-        "Unexpected void\n"
+        "Unexpected expression\n"
     | 166 ->
-        "'}' unexpected\n"
+        "Unexpected expression\n"
     | 80 ->
         "'(' expected\n"
     | 81 ->
@@ -61,9 +61,9 @@ let message =
     | 89 ->
         "';' expected\n"
     | 138 ->
-        "Unexpected void\n"
+        "Unexpected expression\n"
     | 167 ->
-        "Unexpected break\n"
+        "Unexpected expression\n"
     | 94 ->
         "';' expected\n"
     | 42 ->
@@ -151,7 +151,7 @@ let message =
     | 140 ->
         "'}' expected\n"
     | 141 ->
-        "Unexpected expression void\n"
+        "Unexpected expression \n"
     | 142 ->
         "'{' expected\n"
     | 143 ->
@@ -159,9 +159,9 @@ let message =
     | 144 ->
         "'}' expected\n"
     | 35 ->
-        "Unexpected expression 'while'\n"
+        "Unexpected expression \n"
     | 122 ->
-        "Unexpected expression ','\n"
+        "Unexpected expression\n"
     | 39 ->
         "Variable expected\n"
     | 123 ->
