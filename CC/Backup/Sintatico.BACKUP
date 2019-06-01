@@ -462,7 +462,7 @@ programa: ID VIRG
 ## In state 35, spurious reduction of production variavel -> ID 
 ##
 
-Unexpected expression
+Unexpected expression ','
 
 programa: ID WHILE 
 ##
@@ -475,7 +475,7 @@ programa: ID WHILE
 ## ID 
 ##
 
-Unexpected expression 
+Unexpected expression 'while'
 
 programa: IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE ACHAVE RETURN PONTOVIRG EOF 
 ##
@@ -530,7 +530,7 @@ programa: IF APAR LITSTRING FPAR ACHAVE FCHAVE VOID
 ## IF APAR expressao FPAR ACHAVE list(comando) FCHAVE 
 ##
 
-Unexpected expression 
+Unexpected expression void
 
 programa: IF APAR LITSTRING FPAR ACHAVE RETURN PONTOVIRG EOF 
 ##
@@ -1276,7 +1276,7 @@ programa: RETURN PONTOVIRG BREAK
 ## In state 139, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
-Unexpected expression
+Unexpected break
 
 programa: RETURN PONTOVIRG VOID 
 ##
@@ -1288,7 +1288,7 @@ programa: RETURN PONTOVIRG VOID
 ## comando 
 ##
 
-Unexpected expression
+Unexpected void
 
 programa: RETURN WHILE 
 ##
@@ -1474,7 +1474,7 @@ programa: VAR ID DOISPONTOS BOOL PONTOVIRG FCHAVE
 ## In state 159, spurious reduction of production list(declaracao) -> declaracao list(declaracao) 
 ##
 
-Unexpected expression
+'}' unexpected
 
 programa: VAR ID DOISPONTOS BOOL PONTOVIRG VOID 
 ##
@@ -1486,7 +1486,7 @@ programa: VAR ID DOISPONTOS BOOL PONTOVIRG VOID
 ## declaracao 
 ##
 
-Unexpected expression
+Unexpected void
 
 programa: VAR ID DOISPONTOS VOID WHILE 
 ##
@@ -1510,7 +1510,7 @@ programa: VAR ID DOISPONTOS WHILE
 ## VAR separated_nonempty_list(VIRG,ID) DOISPONTOS 
 ##
 
-Type expected
+Tyep expected
 
 programa: VAR ID VIRG WHILE 
 ##
@@ -1559,7 +1559,7 @@ programa: VOID
 ## 
 ##
 
-Unexpected expression
+Unexpected void
 
 programa: WHILE APAR APAR WHILE 
 ##

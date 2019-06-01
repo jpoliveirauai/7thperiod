@@ -1,0 +1,34 @@
+### Starting build.
+# Target: sintaticoTest.ml.depends, tags: { package(menhirLib), extension:ml, file:sintaticoTest.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package menhirLib -modules sintaticoTest.ml > sintaticoTest.ml.depends # cached
+# Target: Ast.ml.depends, tags: { package(menhirLib), extension:ml, file:Ast.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package menhirLib -modules Ast.ml > Ast.ml.depends # cached
+# Target: Ast.cmo, tags: { package(menhirLib), byte, compile, extension:cmo, extension:ml, file:Ast.cmo, file:Ast.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package menhirLib -o Ast.cmo Ast.ml # cached
+# Target: erroSint.ml.depends, tags: { package(menhirLib), extension:ml, file:erroSint.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package menhirLib -modules erroSint.ml > erroSint.ml.depends
+# Target: Lexico.mll, tags: { package(menhirLib), extension:mll, file:Lexico.mll, lexer, ocaml, ocamllex, quiet }
+/home/jpveira/.opam/4.07.0/bin/ocamllex.opt -q Lexico.mll # cached
+# Target: Lexico.ml.depends, tags: { package(menhirLib), extension:ml, file:Lexico.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package menhirLib -modules Lexico.ml > Lexico.ml.depends # cached
+# Target: Sintatico.mly.depends, tags: { package(menhirLib), extension:mly, file:Sintatico.mly, infer, menhir_ocamldep, ocaml, ocamldep, quiet }
+menhir --table --raw-depend --ocamldep 'ocamlfind ocamldep -modules' Sintatico.mly > Sintatico.mly.depends # cached
+# Target: Sintatico.mly, tags: { package(menhirLib), byte, compile, extension:ml, extension:mly, file:Sintatico.ml, file:Sintatico.mly, infer, menhir, ocaml, parser, quiet }
+menhir --table --ocamlc 'ocamlfind ocamlc -package menhirLib' --infer Sintatico.mly # cached
+# Target: Sintatico.mli.depends, tags: { package(menhirLib), extension:mli, file:Sintatico.mli, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package menhirLib -modules Sintatico.mli > Sintatico.mli.depends # cached
+# Target: Sintatico.cmi, tags: { package(menhirLib), byte, compile, extension:mli, file:Sintatico.mli, interf, ocaml, quiet }
+ocamlfind ocamlc -c -package menhirLib -o Sintatico.cmi Sintatico.mli # cached
+# Target: Lexico.cmo, tags: { package(menhirLib), byte, compile, extension:cmo, extension:ml, file:Lexico.cmo, file:Lexico.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package menhirLib -o Lexico.cmo Lexico.ml # cached
+# Target: erroSint.cmo, tags: { package(menhirLib), byte, compile, extension:cmo, extension:ml, file:erroSint.cmo, file:erroSint.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package menhirLib -o erroSint.cmo erroSint.ml
+# Target: sintaticoTest.cmo, tags: { package(menhirLib), byte, compile, extension:cmo, extension:ml, file:sintaticoTest.cmo, file:sintaticoTest.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package menhirLib -o sintaticoTest.cmo sintaticoTest.ml
+# Target: Sintatico.ml.depends, tags: { package(menhirLib), extension:ml, file:Sintatico.ml, ocaml, ocamldep, quiet }
+ocamlfind ocamldep -package menhirLib -modules Sintatico.ml > Sintatico.ml.depends # cached
+# Target: Sintatico.cmo, tags: { package(menhirLib), byte, compile, extension:cmo, extension:ml, file:Sintatico.cmo, file:Sintatico.ml, implem, ocaml, quiet }
+ocamlfind ocamlc -c -package menhirLib -o Sintatico.cmo Sintatico.ml # cached
+# Target: sintaticoTest.byte, tags: { package(menhirLib), byte, dont_link_with, extension:byte, file:sintaticoTest.byte, link, ocaml, program, quiet }
+ocamlfind ocamlc -linkpkg -package menhirLib Ast.cmo Sintatico.cmo Lexico.cmo erroSint.cmo sintaticoTest.cmo -o sintaticoTest.byte
+# Compilation successful.

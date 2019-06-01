@@ -29,7 +29,7 @@ let message =
     | 5 ->
         "Variable expected\n"
     | 26 ->
-        "Type expected\n"
+        "Tyep expected\n"
     | 27 ->
         "';' expected\n"
     | 158 ->

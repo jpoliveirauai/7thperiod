@@ -1510,7 +1510,7 @@ programa: VAR ID DOISPONTOS WHILE
 ## VAR separated_nonempty_list(VIRG,ID) DOISPONTOS 
 ##
 
-Type expected
+Tyep expected
 
 programa: VAR ID VIRG WHILE 
 ##
