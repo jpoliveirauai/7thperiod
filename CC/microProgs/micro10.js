@@ -1,5 +1,5 @@
 function fatorial(numero:integer): integer = {
-    if (numero <= 0)
+    if (numero < 0)
         return 1;
     else
         return numero * fatorial(numero - 1);
