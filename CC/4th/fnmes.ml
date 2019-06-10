@@ -28,7 +28,7 @@ let message =
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 20 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
-    | 22 ->
+    | 23 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 179 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"

@@ -303,20 +303,6 @@ let rec verifica_cmd amb tiporet cmd =
     ) in
     CmdCase ( v1, cas1, def1)
 
-let verifica_main amb cmd =
-  let open A in
-  match cmd with
-    | ComandoExpress (exp) -> 
-        (
-            let (e1,  tinf) = infere_exp amb ( exp) in
-             let _ = mesmo_tipo (posicao exp)
-             "A funcao main deve retornar %s e nao %s"
-             TipoVoid tinf 
-            in ComandoExpress  (e1)
-        )
-    | _ -> let msg = "Deve haver chamada para a função principal" in
-      failwith (msg_erro (Lexing.dummy_pos,Lexing.dummy_pos) msg)
-
 and verifica_fun amb ast =
   let open A in
   match ast with
@@ -374,11 +360,11 @@ let semantico ast =
   (* cria ambiente global inicialmente vazio *)
   let amb_global = Amb.novo_amb [] in
   let _ = declara_predefinidas amb_global in
-  let (A.Programa (decs_globais, decs_funs, chamada)) = ast in
+  let (A.Programa (decs_globais, decs_funs, comandos)) = ast in
   let _ = List.iter (insere_declaracao_var amb_global) decs_globais in
   let _ = List.iter (insere_declaracao_fun amb_global) decs_funs in
   (* Verificação de tipos nas funções *)
   let decs_funs = List.map (verifica_fun amb_global) decs_funs in
   (* Verificação de tipos na função principal *)
-  let chamada = verifica_main amb_global chamada in
-     (A.Programa (decs_globais, decs_funs, chamada),  amb_global)
+  let comandos = List.map (verifica_cmd amb_global A.TipoVoid) comandos in
+     (A.Programa (decs_globais, decs_funs, comandos),  amb_global)

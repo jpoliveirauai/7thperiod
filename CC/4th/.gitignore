@@ -9,8 +9,6 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 .vscode/
-nanoProgs/
-Help/
 
 ### Eclipse ###
 .metadata
@@ -215,3 +213,4 @@ nbdist/
 
 _build/
 semanticoTest\.byte
+nanoProgs/

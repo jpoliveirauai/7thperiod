@@ -4,7 +4,7 @@ open Lexing
 type ident = string
 type 'a pos =  'a * Lexing.position (* tipo e posição no arquivo fonte *)
 
-type 'expr programa = Programa of declaracoes * ('expr funcoes) * ('expr comando)
+type 'expr programa = Programa of declaracoes * ('expr funcoes) * ('expr comandos)
 and declaracoes = declaracao list
 and 'expr funcoes = ('expr funcao) list
 and 'expr comandos = ('expr comando) list

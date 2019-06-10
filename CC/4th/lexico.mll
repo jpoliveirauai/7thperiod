@@ -50,7 +50,7 @@ rule token =
 	(*Reservad Words*)
 	| "var"			{ VAR (pos_atual lexbuf) }
 	| "console.log" 	{ PRINT (pos_atual lexbuf) }
-	| "prompt"	{ LEIA (pos_atual lexbuf) }
+	| "readline"	{ LEIA (pos_atual lexbuf) }
 	|"function" { FUNCAO (pos_atual lexbuf) }
 	|"if"				{ IF (pos_atual lexbuf) }
 	|"else"			{ ELSE (pos_atual lexbuf) }

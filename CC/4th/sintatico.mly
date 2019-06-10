@@ -76,7 +76,7 @@ open Sast
 /* Os programas em javascript possuem declaração de variáveis e funções misturados, bem como sua execução */
 programa:	de = declaracoes
 			fs = declaracao_funcao+
-			c = comando_expressao
+			c = comando*
 			EOF { Programa (de, fs, c) }	
 
 
@@ -91,7 +91,7 @@ tipo_simples:
 
 /* Definição de parâmetros 					- OOK */
 
-parametros: dec = separated_list(PONTOVIRG, declaracao_args) { List.flatten dec}
+parametros: dec = separated_list(VIRG, declaracao_args) { List.flatten dec}
 
 declaracao_args: ids = separated_nonempty_list(VIRG, ID)
  DOISPONTOS t = tipo_simples
