@@ -4,7 +4,7 @@ programa' -> . programa [ # ]
 -- On programa shift to state 15
 -- On list(declaracao) shift to state 16
 -- On declaracoes shift to state 17
--- On declaracao shift to state 176
+-- On declaracao shift to state 178
 -- On FUNCAO reduce production list(declaracao) -> 
 
 State 1:
@@ -133,8 +133,8 @@ declaracoes -> list(declaracao) . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL 
 State 17:
 programa -> declaracoes . nonempty_list(declaracao_funcao) list(comando) EOF [ # ]
 -- On FUNCAO shift to state 18
--- On nonempty_list(declaracao_funcao) shift to state 182
--- On declaracao_funcao shift to state 185
+-- On nonempty_list(declaracao_funcao) shift to state 184
+-- On declaracao_funcao shift to state 187
 
 State 18:
 declaracao_funcao -> FUNCAO . ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR EOF APAR ]
@@ -150,8 +150,8 @@ declaracao_funcao -> FUNCAO ID APAR . parametros FPAR DOISPONTOS tipo_simples AT
 -- On separated_nonempty_list(VIRG,declaracao_args) shift to state 21
 -- On separated_nonempty_list(VIRG,ID) shift to state 22
 -- On parametros shift to state 25
--- On loption(separated_nonempty_list(VIRG,declaracao_args)) shift to state 178
--- On declaracao_args shift to state 179
+-- On loption(separated_nonempty_list(VIRG,declaracao_args)) shift to state 180
+-- On declaracao_args shift to state 181
 -- On FPAR reduce production loption(separated_nonempty_list(VIRG,declaracao_args)) -> 
 
 State 21:
@@ -208,7 +208,7 @@ declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRI
 -- On VAR shift to state 1
 -- On list(declaracao) shift to state 16
 -- On declaracoes shift to state 31
--- On declaracao shift to state 176
+-- On declaracao shift to state 178
 -- On WHILE reduce production list(declaracao) -> 
 -- On SWITCH reduce production list(declaracao) -> 
 -- On RETURN reduce production list(declaracao) -> 
@@ -241,22 +241,22 @@ declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRI
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 174
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 176
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On FCHAVE reduce production list(comando) -> 
 
@@ -1337,22 +1337,22 @@ comando_while -> WHILE APAR expressao FPAR ACHAVE . list(comando) FCHAVE [ WHILE
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 172
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 174
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On FCHAVE reduce production list(comando) -> 
 
@@ -1381,8 +1381,8 @@ comando_case -> SWITCH APAR variavel FPAR . ACHAVE list(cases) option(case_defau
 State 88:
 comando_case -> SWITCH APAR variavel FPAR ACHAVE . list(cases) option(case_default) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On CASE shift to state 89
--- On list(cases) shift to state 161
--- On cases shift to state 170
+-- On list(cases) shift to state 163
+-- On cases shift to state 172
 -- On FCHAVE reduce production list(cases) -> 
 -- On DEFAULT reduce production list(cases) -> 
 
@@ -1447,22 +1447,22 @@ cases -> CASE expressao DOISPONTOS . list(comando) BREAK PONTOVIRG [ FCHAVE DEFA
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 158
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 160
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On BREAK reduce production list(comando) -> 
 
@@ -1781,40 +1781,40 @@ comando_se -> IF APAR expressao FPAR ACHAVE . list(comando) FCHAVE option(__anon
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 151
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 153
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On FCHAVE reduce production list(comando) -> 
 
 State 114:
-comando_for -> FOR . APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR . APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On APAR shift to state 115
 
 State 115:
-comando_for -> FOR APAR . variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR . variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On ID shift to state 85
 -- On variavel shift to state 116
 
 State 116:
-comando_for -> FOR APAR variavel . ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR variavel . ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On ATRIB shift to state 117
 
 State 117:
-comando_for -> FOR APAR variavel ATRIB . expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR variavel ATRIB . expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On LITSTRING shift to state 34
 -- On LITREAL shift to state 35
 -- On LITINT shift to state 36
@@ -1827,7 +1827,7 @@ comando_for -> FOR APAR variavel ATRIB . expressao PONTOVIRG expressao PONTOVIRG
 -- On chamada shift to state 48
 
 State 118:
-comando_for -> FOR APAR variavel ATRIB expressao . PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR variavel ATRIB expressao . PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -1859,7 +1859,7 @@ expressao -> expressao . EXPOENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MEN
 -- On DIFERENTE shift to state 71
 
 State 119:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG . expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG . expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On LITSTRING shift to state 34
 -- On LITREAL shift to state 35
 -- On LITINT shift to state 36
@@ -1872,7 +1872,7 @@ comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG . expressao PONTOVIRG
 -- On chamada shift to state 48
 
 State 120:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao . PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao . PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -1904,7 +1904,16 @@ expressao -> expressao . EXPOENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MEN
 -- On DIFERENTE shift to state 71
 
 State 121:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG . expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG . variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+-- On ID shift to state 85
+-- On variavel shift to state 122
+
+State 122:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel . ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+-- On ATRIB shift to state 123
+
+State 123:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB . expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On LITSTRING shift to state 34
 -- On LITREAL shift to state 35
 -- On LITINT shift to state 36
@@ -1913,11 +1922,11 @@ comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG .
 -- On ID shift to state 39
 -- On APAR shift to state 41
 -- On variavel shift to state 42
--- On expressao shift to state 122
+-- On expressao shift to state 124
 -- On chamada shift to state 48
 
-State 122:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao . FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+State 124:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao . FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
@@ -1942,18 +1951,18 @@ expressao -> expressao . EXPOENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIG
 -- On MAIORIGUAL shift to state 63
 -- On MAIOR shift to state 65
 -- On IGUAL shift to state 67
--- On FPAR shift to state 123
+-- On FPAR shift to state 125
 -- On EXPOENTE shift to state 53
 -- On E shift to state 69
 -- On DIVIDE shift to state 55
 -- On DIFERENTE shift to state 71
 
-State 123:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR . ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On ACHAVE shift to state 124
+State 125:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR . ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+-- On ACHAVE shift to state 126
 
-State 124:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+State 126:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE shift to state 32
 -- On SWITCH shift to state 83
 -- On RETURN shift to state 92
@@ -1968,33 +1977,33 @@ comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG e
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 133
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 135
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On FCHAVE reduce production list(comando) -> 
 
-State 125:
+State 127:
 comando_atribuicao -> variavel . ATRIB expressao PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 comando_decremento -> variavel . DECREMENTO PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 comando_incremento -> variavel . INCREMENTO PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 expressao -> variavel . [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
--- On INCREMENTO shift to state 126
--- On DECREMENTO shift to state 128
--- On ATRIB shift to state 130
+-- On INCREMENTO shift to state 128
+-- On DECREMENTO shift to state 130
+-- On ATRIB shift to state 132
 -- On PONTOVIRG reduce production expressao -> variavel 
 -- On OU reduce production expressao -> variavel 
 -- On MULTIPLICA reduce production expressao -> variavel 
@@ -2011,11 +2020,11 @@ expressao -> variavel . [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR 
 -- On DIVIDE reduce production expressao -> variavel 
 -- On DIFERENTE reduce production expressao -> variavel 
 
-State 126:
+State 128:
 comando_incremento -> variavel INCREMENTO . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On PONTOVIRG shift to state 127
+-- On PONTOVIRG shift to state 129
 
-State 127:
+State 129:
 comando_incremento -> variavel INCREMENTO PONTOVIRG . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_incremento -> variavel INCREMENTO PONTOVIRG 
 -- On SWITCH reduce production comando_incremento -> variavel INCREMENTO PONTOVIRG 
@@ -2035,11 +2044,11 @@ comando_incremento -> variavel INCREMENTO PONTOVIRG . [ WHILE SWITCH RETURN PRIN
 -- On BREAK reduce production comando_incremento -> variavel INCREMENTO PONTOVIRG 
 -- On APAR reduce production comando_incremento -> variavel INCREMENTO PONTOVIRG 
 
-State 128:
+State 130:
 comando_decremento -> variavel DECREMENTO . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On PONTOVIRG shift to state 129
+-- On PONTOVIRG shift to state 131
 
-State 129:
+State 131:
 comando_decremento -> variavel DECREMENTO PONTOVIRG . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_decremento -> variavel DECREMENTO PONTOVIRG 
 -- On SWITCH reduce production comando_decremento -> variavel DECREMENTO PONTOVIRG 
@@ -2059,7 +2068,7 @@ comando_decremento -> variavel DECREMENTO PONTOVIRG . [ WHILE SWITCH RETURN PRIN
 -- On BREAK reduce production comando_decremento -> variavel DECREMENTO PONTOVIRG 
 -- On APAR reduce production comando_decremento -> variavel DECREMENTO PONTOVIRG 
 
-State 130:
+State 132:
 comando_atribuicao -> variavel ATRIB . expressao PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On LITSTRING shift to state 34
 -- On LITREAL shift to state 35
@@ -2069,10 +2078,10 @@ comando_atribuicao -> variavel ATRIB . expressao PONTOVIRG [ WHILE SWITCH RETURN
 -- On ID shift to state 39
 -- On APAR shift to state 41
 -- On variavel shift to state 42
--- On expressao shift to state 131
+-- On expressao shift to state 133
 -- On chamada shift to state 48
 
-State 131:
+State 133:
 comando_atribuicao -> variavel ATRIB expressao . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -2088,7 +2097,7 @@ expressao -> expressao . MAIOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS 
 expressao -> expressao . E expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . OU expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . EXPOENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
--- On PONTOVIRG shift to state 132
+-- On PONTOVIRG shift to state 134
 -- On OU shift to state 44
 -- On MULTIPLICA shift to state 46
 -- On MODULO shift to state 49
@@ -2104,7 +2113,7 @@ expressao -> expressao . EXPOENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MEN
 -- On DIVIDE shift to state 55
 -- On DIFERENTE shift to state 71
 
-State 132:
+State 134:
 comando_atribuicao -> variavel ATRIB expressao PONTOVIRG . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
 -- On SWITCH reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
@@ -2124,31 +2133,31 @@ comando_atribuicao -> variavel ATRIB expressao PONTOVIRG . [ WHILE SWITCH RETURN
 -- On BREAK reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
 -- On APAR reduce production comando_atribuicao -> variavel ATRIB expressao PONTOVIRG 
 
-State 133:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On FCHAVE shift to state 134
-
-State 134:
-comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On WHILE reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On SWITCH reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On RETURN reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On PRINT reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On LITSTRING reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On LITREAL reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On LITINT reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On LITCHAR reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On LITBOOL reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On LEIA reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On IF reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On ID reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On FOR reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On FCHAVE reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On EOF reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On BREAK reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
--- On APAR reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE 
-
 State 135:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+-- On FCHAVE shift to state 136
+
+State 136:
+comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+-- On WHILE reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On SWITCH reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On RETURN reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On PRINT reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On LITSTRING reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On LITREAL reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On LITINT reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On LITCHAR reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On LITBOOL reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On LEIA reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On IF reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On ID reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On FOR reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On FCHAVE reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On EOF reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On BREAK reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+-- On APAR reduce production comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE 
+
+State 137:
 comando_expressao -> expressao . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -2164,7 +2173,7 @@ expressao -> expressao . MAIOR expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS 
 expressao -> expressao . E expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . OU expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 expressao -> expressao . EXPOENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
--- On PONTOVIRG shift to state 136
+-- On PONTOVIRG shift to state 138
 -- On OU shift to state 44
 -- On MULTIPLICA shift to state 46
 -- On MODULO shift to state 49
@@ -2180,7 +2189,7 @@ expressao -> expressao . EXPOENTE expressao [ PONTOVIRG OU MULTIPLICA MODULO MEN
 -- On DIVIDE shift to state 55
 -- On DIFERENTE shift to state 71
 
-State 136:
+State 138:
 comando_expressao -> expressao PONTOVIRG . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_expressao -> expressao PONTOVIRG 
 -- On SWITCH reduce production comando_expressao -> expressao PONTOVIRG 
@@ -2200,7 +2209,7 @@ comando_expressao -> expressao PONTOVIRG . [ WHILE SWITCH RETURN PRINT LITSTRING
 -- On BREAK reduce production comando_expressao -> expressao PONTOVIRG 
 -- On APAR reduce production comando_expressao -> expressao PONTOVIRG 
 
-State 137:
+State 139:
 comando -> comando_while . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_while 
 -- On SWITCH reduce production comando -> comando_while 
@@ -2220,7 +2229,7 @@ comando -> comando_while . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT 
 -- On BREAK reduce production comando -> comando_while 
 -- On APAR reduce production comando -> comando_while 
 
-State 138:
+State 140:
 comando -> comando_se . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_se 
 -- On SWITCH reduce production comando -> comando_se 
@@ -2240,7 +2249,7 @@ comando -> comando_se . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LIT
 -- On BREAK reduce production comando -> comando_se 
 -- On APAR reduce production comando -> comando_se 
 
-State 139:
+State 141:
 comando -> comando_saida . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_saida 
 -- On SWITCH reduce production comando -> comando_saida 
@@ -2260,7 +2269,7 @@ comando -> comando_saida . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT 
 -- On BREAK reduce production comando -> comando_saida 
 -- On APAR reduce production comando -> comando_saida 
 
-State 140:
+State 142:
 comando -> comando_return_vazio . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_return_vazio 
 -- On SWITCH reduce production comando -> comando_return_vazio 
@@ -2280,7 +2289,7 @@ comando -> comando_return_vazio . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL 
 -- On BREAK reduce production comando -> comando_return_vazio 
 -- On APAR reduce production comando -> comando_return_vazio 
 
-State 141:
+State 143:
 comando -> comando_return . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_return 
 -- On SWITCH reduce production comando -> comando_return 
@@ -2300,7 +2309,7 @@ comando -> comando_return . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT
 -- On BREAK reduce production comando -> comando_return 
 -- On APAR reduce production comando -> comando_return 
 
-State 142:
+State 144:
 comando -> comando_incremento . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_incremento 
 -- On SWITCH reduce production comando -> comando_incremento 
@@ -2320,7 +2329,7 @@ comando -> comando_incremento . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LI
 -- On BREAK reduce production comando -> comando_incremento 
 -- On APAR reduce production comando -> comando_incremento 
 
-State 143:
+State 145:
 comando -> comando_for . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_for 
 -- On SWITCH reduce production comando -> comando_for 
@@ -2340,7 +2349,7 @@ comando -> comando_for . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LI
 -- On BREAK reduce production comando -> comando_for 
 -- On APAR reduce production comando -> comando_for 
 
-State 144:
+State 146:
 comando -> comando_expressao . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_expressao 
 -- On SWITCH reduce production comando -> comando_expressao 
@@ -2360,7 +2369,7 @@ comando -> comando_expressao . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LIT
 -- On BREAK reduce production comando -> comando_expressao 
 -- On APAR reduce production comando -> comando_expressao 
 
-State 145:
+State 147:
 comando -> comando_entrada . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_entrada 
 -- On SWITCH reduce production comando -> comando_entrada 
@@ -2380,7 +2389,7 @@ comando -> comando_entrada . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITIN
 -- On BREAK reduce production comando -> comando_entrada 
 -- On APAR reduce production comando -> comando_entrada 
 
-State 146:
+State 148:
 comando -> comando_decremento . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_decremento 
 -- On SWITCH reduce production comando -> comando_decremento 
@@ -2400,7 +2409,7 @@ comando -> comando_decremento . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LI
 -- On BREAK reduce production comando -> comando_decremento 
 -- On APAR reduce production comando -> comando_decremento 
 
-State 147:
+State 149:
 comando -> comando_case . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_case 
 -- On SWITCH reduce production comando -> comando_case 
@@ -2420,7 +2429,7 @@ comando -> comando_case . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT L
 -- On BREAK reduce production comando -> comando_case 
 -- On APAR reduce production comando -> comando_case 
 
-State 148:
+State 150:
 comando -> comando_atribuicao . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando -> comando_atribuicao 
 -- On SWITCH reduce production comando -> comando_atribuicao 
@@ -2440,7 +2449,7 @@ comando -> comando_atribuicao . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LI
 -- On BREAK reduce production comando -> comando_atribuicao 
 -- On APAR reduce production comando -> comando_atribuicao 
 
-State 149:
+State 151:
 list(comando) -> comando . list(comando) [ FCHAVE EOF BREAK ]
 -- On WHILE shift to state 32
 -- On SWITCH shift to state 83
@@ -2456,41 +2465,41 @@ list(comando) -> comando . list(comando) [ FCHAVE EOF BREAK ]
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 150
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 152
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On FCHAVE reduce production list(comando) -> 
 -- On EOF reduce production list(comando) -> 
 -- On BREAK reduce production list(comando) -> 
 
-State 150:
+State 152:
 list(comando) -> comando list(comando) . [ FCHAVE EOF BREAK ]
 -- On FCHAVE reduce production list(comando) -> comando list(comando) 
 -- On EOF reduce production list(comando) -> comando list(comando) 
 -- On BREAK reduce production list(comando) -> comando list(comando) 
 
-State 151:
+State 153:
 comando_se -> IF APAR expressao FPAR ACHAVE list(comando) . FCHAVE option(__anonymous_0) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On FCHAVE shift to state 152
+-- On FCHAVE shift to state 154
 
-State 152:
+State 154:
 comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE . option(__anonymous_0) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On ELSE shift to state 153
--- On option(__anonymous_0) shift to state 157
+-- On ELSE shift to state 155
+-- On option(__anonymous_0) shift to state 159
 -- On WHILE reduce production option(__anonymous_0) -> 
 -- On SWITCH reduce production option(__anonymous_0) -> 
 -- On RETURN reduce production option(__anonymous_0) -> 
@@ -2509,11 +2518,11 @@ comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE . option(__anon
 -- On BREAK reduce production option(__anonymous_0) -> 
 -- On APAR reduce production option(__anonymous_0) -> 
 
-State 153:
+State 155:
 option(__anonymous_0) -> ELSE . ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On ACHAVE shift to state 154
+-- On ACHAVE shift to state 156
 
-State 154:
+State 156:
 option(__anonymous_0) -> ELSE ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE shift to state 32
 -- On SWITCH shift to state 83
@@ -2529,30 +2538,30 @@ option(__anonymous_0) -> ELSE ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETUR
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 155
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 157
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On FCHAVE reduce production list(comando) -> 
 
-State 155:
+State 157:
 option(__anonymous_0) -> ELSE ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On FCHAVE shift to state 156
+-- On FCHAVE shift to state 158
 
-State 156:
+State 158:
 option(__anonymous_0) -> ELSE ACHAVE list(comando) FCHAVE . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production option(__anonymous_0) -> ELSE ACHAVE list(comando) FCHAVE 
 -- On SWITCH reduce production option(__anonymous_0) -> ELSE ACHAVE list(comando) FCHAVE 
@@ -2572,7 +2581,7 @@ option(__anonymous_0) -> ELSE ACHAVE list(comando) FCHAVE . [ WHILE SWITCH RETUR
 -- On BREAK reduce production option(__anonymous_0) -> ELSE ACHAVE list(comando) FCHAVE 
 -- On APAR reduce production option(__anonymous_0) -> ELSE ACHAVE list(comando) FCHAVE 
 
-State 157:
+State 159:
 comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE option(__anonymous_0) . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE option(__anonymous_0) 
 -- On SWITCH reduce production comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE option(__anonymous_0) 
@@ -2592,32 +2601,32 @@ comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE option(__anonym
 -- On BREAK reduce production comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE option(__anonymous_0) 
 -- On APAR reduce production comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE option(__anonymous_0) 
 
-State 158:
-cases -> CASE expressao DOISPONTOS list(comando) . BREAK PONTOVIRG [ FCHAVE DEFAULT CASE ]
--- On BREAK shift to state 159
-
-State 159:
-cases -> CASE expressao DOISPONTOS list(comando) BREAK . PONTOVIRG [ FCHAVE DEFAULT CASE ]
--- On PONTOVIRG shift to state 160
-
 State 160:
+cases -> CASE expressao DOISPONTOS list(comando) . BREAK PONTOVIRG [ FCHAVE DEFAULT CASE ]
+-- On BREAK shift to state 161
+
+State 161:
+cases -> CASE expressao DOISPONTOS list(comando) BREAK . PONTOVIRG [ FCHAVE DEFAULT CASE ]
+-- On PONTOVIRG shift to state 162
+
+State 162:
 cases -> CASE expressao DOISPONTOS list(comando) BREAK PONTOVIRG . [ FCHAVE DEFAULT CASE ]
 -- On FCHAVE reduce production cases -> CASE expressao DOISPONTOS list(comando) BREAK PONTOVIRG 
 -- On DEFAULT reduce production cases -> CASE expressao DOISPONTOS list(comando) BREAK PONTOVIRG 
 -- On CASE reduce production cases -> CASE expressao DOISPONTOS list(comando) BREAK PONTOVIRG 
 
-State 161:
+State 163:
 comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) . option(case_default) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On DEFAULT shift to state 162
--- On option(case_default) shift to state 167
--- On case_default shift to state 169
+-- On DEFAULT shift to state 164
+-- On option(case_default) shift to state 169
+-- On case_default shift to state 171
 -- On FCHAVE reduce production option(case_default) -> 
 
-State 162:
+State 164:
 case_default -> DEFAULT . DOISPONTOS list(comando) BREAK PONTOVIRG [ FCHAVE ]
--- On DOISPONTOS shift to state 163
+-- On DOISPONTOS shift to state 165
 
-State 163:
+State 165:
 case_default -> DEFAULT DOISPONTOS . list(comando) BREAK PONTOVIRG [ FCHAVE ]
 -- On WHILE shift to state 32
 -- On SWITCH shift to state 83
@@ -2633,42 +2642,42 @@ case_default -> DEFAULT DOISPONTOS . list(comando) BREAK PONTOVIRG [ FCHAVE ]
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 164
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 166
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On BREAK reduce production list(comando) -> 
 
-State 164:
-case_default -> DEFAULT DOISPONTOS list(comando) . BREAK PONTOVIRG [ FCHAVE ]
--- On BREAK shift to state 165
-
-State 165:
-case_default -> DEFAULT DOISPONTOS list(comando) BREAK . PONTOVIRG [ FCHAVE ]
--- On PONTOVIRG shift to state 166
-
 State 166:
+case_default -> DEFAULT DOISPONTOS list(comando) . BREAK PONTOVIRG [ FCHAVE ]
+-- On BREAK shift to state 167
+
+State 167:
+case_default -> DEFAULT DOISPONTOS list(comando) BREAK . PONTOVIRG [ FCHAVE ]
+-- On PONTOVIRG shift to state 168
+
+State 168:
 case_default -> DEFAULT DOISPONTOS list(comando) BREAK PONTOVIRG . [ FCHAVE ]
 -- On FCHAVE reduce production case_default -> DEFAULT DOISPONTOS list(comando) BREAK PONTOVIRG 
 
-State 167:
+State 169:
 comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On FCHAVE shift to state 168
+-- On FCHAVE shift to state 170
 
-State 168:
+State 170:
 comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) FCHAVE . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) FCHAVE 
 -- On SWITCH reduce production comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) FCHAVE 
@@ -2688,28 +2697,28 @@ comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default
 -- On BREAK reduce production comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) FCHAVE 
 -- On APAR reduce production comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) FCHAVE 
 
-State 169:
+State 171:
 option(case_default) -> case_default . [ FCHAVE ]
 -- On FCHAVE reduce production option(case_default) -> case_default 
 
-State 170:
+State 172:
 list(cases) -> cases . list(cases) [ FCHAVE DEFAULT ]
 -- On CASE shift to state 89
--- On list(cases) shift to state 171
--- On cases shift to state 170
+-- On list(cases) shift to state 173
+-- On cases shift to state 172
 -- On FCHAVE reduce production list(cases) -> 
 -- On DEFAULT reduce production list(cases) -> 
 
-State 171:
+State 173:
 list(cases) -> cases list(cases) . [ FCHAVE DEFAULT ]
 -- On FCHAVE reduce production list(cases) -> cases list(cases) 
 -- On DEFAULT reduce production list(cases) -> cases list(cases) 
 
-State 172:
+State 174:
 comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
--- On FCHAVE shift to state 173
+-- On FCHAVE shift to state 175
 
-State 173:
+State 175:
 comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) FCHAVE . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 -- On WHILE reduce production comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) FCHAVE 
 -- On SWITCH reduce production comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) FCHAVE 
@@ -2729,11 +2738,11 @@ comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) FCHAVE . [ WHILE
 -- On BREAK reduce production comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) FCHAVE 
 -- On APAR reduce production comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) FCHAVE 
 
-State 174:
+State 176:
 declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR EOF APAR ]
--- On FCHAVE shift to state 175
+-- On FCHAVE shift to state 177
 
-State 175:
+State 177:
 declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) FCHAVE . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR EOF APAR ]
 -- On WHILE reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) FCHAVE 
 -- On SWITCH reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) FCHAVE 
@@ -2752,11 +2761,11 @@ declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRI
 -- On EOF reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) FCHAVE 
 -- On APAR reduce production declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) FCHAVE 
 
-State 176:
+State 178:
 list(declaracao) -> declaracao . list(declaracao) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR FCHAVE APAR ]
 -- On VAR shift to state 1
--- On list(declaracao) shift to state 177
--- On declaracao shift to state 176
+-- On list(declaracao) shift to state 179
+-- On declaracao shift to state 178
 -- On WHILE reduce production list(declaracao) -> 
 -- On SWITCH reduce production list(declaracao) -> 
 -- On RETURN reduce production list(declaracao) -> 
@@ -2774,7 +2783,7 @@ list(declaracao) -> declaracao . list(declaracao) [ WHILE SWITCH RETURN PRINT LI
 -- On FCHAVE reduce production list(declaracao) -> 
 -- On APAR reduce production list(declaracao) -> 
 
-State 177:
+State 179:
 list(declaracao) -> declaracao list(declaracao) . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR FCHAVE APAR ]
 -- On WHILE reduce production list(declaracao) -> declaracao list(declaracao) 
 -- On SWITCH reduce production list(declaracao) -> declaracao list(declaracao) 
@@ -2793,28 +2802,28 @@ list(declaracao) -> declaracao list(declaracao) . [ WHILE SWITCH RETURN PRINT LI
 -- On FCHAVE reduce production list(declaracao) -> declaracao list(declaracao) 
 -- On APAR reduce production list(declaracao) -> declaracao list(declaracao) 
 
-State 178:
+State 180:
 parametros -> loption(separated_nonempty_list(VIRG,declaracao_args)) . [ FPAR ]
 -- On FPAR reduce production parametros -> loption(separated_nonempty_list(VIRG,declaracao_args)) 
 
-State 179:
+State 181:
 separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args . [ FPAR ]
 separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args . VIRG separated_nonempty_list(VIRG,declaracao_args) [ FPAR ]
--- On VIRG shift to state 180
+-- On VIRG shift to state 182
 -- On FPAR reduce production separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args 
 
-State 180:
+State 182:
 separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args VIRG . separated_nonempty_list(VIRG,declaracao_args) [ FPAR ]
 -- On ID shift to state 2
--- On separated_nonempty_list(VIRG,declaracao_args) shift to state 181
+-- On separated_nonempty_list(VIRG,declaracao_args) shift to state 183
 -- On separated_nonempty_list(VIRG,ID) shift to state 22
--- On declaracao_args shift to state 179
+-- On declaracao_args shift to state 181
 
-State 181:
+State 183:
 separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args VIRG separated_nonempty_list(VIRG,declaracao_args) . [ FPAR ]
 -- On FPAR reduce production separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args VIRG separated_nonempty_list(VIRG,declaracao_args) 
 
-State 182:
+State 184:
 programa -> declaracoes nonempty_list(declaracao_funcao) . list(comando) EOF [ # ]
 -- On WHILE shift to state 32
 -- On SWITCH shift to state 83
@@ -2830,39 +2839,39 @@ programa -> declaracoes nonempty_list(declaracao_funcao) . list(comando) EOF [ #
 -- On ID shift to state 39
 -- On FOR shift to state 114
 -- On APAR shift to state 41
--- On variavel shift to state 125
--- On list(comando) shift to state 183
--- On expressao shift to state 135
--- On comando_while shift to state 137
--- On comando_se shift to state 138
--- On comando_saida shift to state 139
--- On comando_return_vazio shift to state 140
--- On comando_return shift to state 141
--- On comando_incremento shift to state 142
--- On comando_for shift to state 143
--- On comando_expressao shift to state 144
--- On comando_entrada shift to state 145
--- On comando_decremento shift to state 146
--- On comando_case shift to state 147
--- On comando_atribuicao shift to state 148
--- On comando shift to state 149
+-- On variavel shift to state 127
+-- On list(comando) shift to state 185
+-- On expressao shift to state 137
+-- On comando_while shift to state 139
+-- On comando_se shift to state 140
+-- On comando_saida shift to state 141
+-- On comando_return_vazio shift to state 142
+-- On comando_return shift to state 143
+-- On comando_incremento shift to state 144
+-- On comando_for shift to state 145
+-- On comando_expressao shift to state 146
+-- On comando_entrada shift to state 147
+-- On comando_decremento shift to state 148
+-- On comando_case shift to state 149
+-- On comando_atribuicao shift to state 150
+-- On comando shift to state 151
 -- On chamada shift to state 48
 -- On EOF reduce production list(comando) -> 
 
-State 183:
+State 185:
 programa -> declaracoes nonempty_list(declaracao_funcao) list(comando) . EOF [ # ]
--- On EOF shift to state 184
+-- On EOF shift to state 186
 
-State 184:
+State 186:
 programa -> declaracoes nonempty_list(declaracao_funcao) list(comando) EOF . [ # ]
 -- On # reduce production programa -> declaracoes nonempty_list(declaracao_funcao) list(comando) EOF 
 
-State 185:
+State 187:
 nonempty_list(declaracao_funcao) -> declaracao_funcao . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR EOF APAR ]
 nonempty_list(declaracao_funcao) -> declaracao_funcao . nonempty_list(declaracao_funcao) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR EOF APAR ]
 -- On FUNCAO shift to state 18
--- On nonempty_list(declaracao_funcao) shift to state 186
--- On declaracao_funcao shift to state 185
+-- On nonempty_list(declaracao_funcao) shift to state 188
+-- On declaracao_funcao shift to state 187
 -- On WHILE reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao 
 -- On SWITCH reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao 
 -- On RETURN reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao 
@@ -2879,7 +2888,7 @@ nonempty_list(declaracao_funcao) -> declaracao_funcao . nonempty_list(declaracao
 -- On EOF reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao 
 -- On APAR reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao 
 
-State 186:
+State 188:
 nonempty_list(declaracao_funcao) -> declaracao_funcao nonempty_list(declaracao_funcao) . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR EOF APAR ]
 -- On WHILE reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao nonempty_list(declaracao_funcao) 
 -- On SWITCH reduce production nonempty_list(declaracao_funcao) -> declaracao_funcao nonempty_list(declaracao_funcao) 

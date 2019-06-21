@@ -343,17 +343,10 @@ and interpreta_cmd amb cmd =
         | None -> ignore()) )
     in match_cases cases
 
-    | CmdFor (variavel, exp, condicao, inc, doit) ->
-    (* Interpreta o For como uma atribuição seguida de um while,
-    que ao final do corpo tem uma operação de incremento na variável de iteração *)
-    
-    (* incializa variável de iteração *)
+    | CmdFor (variavel, exp, condicao, var,inc, doit) ->
     let _ = interpreta_cmd amb (CmdAtrib (variavel, exp)) in
-    (* monta artificialmente o comando de incremento *)
-    let inc = CmdAtrib (variavel, (ExpOp((Mais, TipoInt ),( variavel,TipoInt), (ExpInt (1, TipoInt),TipoInt) ))) in
-    (* adiciona esse incremento ao final do corpo *)
-    (* let novocorpo = List.append doit [inc] in *)
-    (* relança o comando while para a funçao interpretá-lo*)
+    (* let inc = interpreta_cmd amb (CmdAtrib (var, inc)) in *)
+    let inc = CmdAtrib (var, inc) in
     interpreta_cmd amb (CmdWhile (condicao, List.append doit [inc]))
   
 

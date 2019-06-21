@@ -40,7 +40,7 @@ and 'expr comando =
   | CmdSaida of ('expr expressoes)
   | CmdRetorno of 'expr option
   | CmdWhile of 'expr * ('expr comandos)
-  | CmdFor of   'expr * 'expr * 'expr * 'expr * ('expr comandos)
+  | CmdFor of   'expr * 'expr * 'expr * 'expr * 'expr * ('expr comandos)
   | ComandoExpress of   'expr
   | CmdCase of  'expr * ('expr case) list * ('expr comandos option)
 

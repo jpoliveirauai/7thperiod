@@ -261,7 +261,7 @@ let rec verifica_cmd amb tiporet cmd =
     
      CmdWhile (teste1, c1)
 
-     | CmdFor ( v,ex,e,exp,c)->
+     | CmdFor ( v,ex,e,var,exp,c)->
      (* Infere o tipo da expressão no lado direito da atribuição *)
      let (v1,  tdir) = infere_exp amb v
      (* Faz o mesmo para o lado esquerdo *)
@@ -275,10 +275,18 @@ let rec verifica_cmd amb tiporet cmd =
               "O teste do for deveria ser do tipo %s e nao %s"
               TipoBool tinf in
      (* Infere o tipo da expressão de passo do for *)
-     let (exp1,  tdir) = infere_exp amb exp in
+     (* let (exp1,  tdir) = infere_exp amb exp in *)
      (* Verifica a validade de cada comando do bloco  *)
      let c1 = List.map (verifica_cmd amb tiporet) c in
-      CmdFor ( v1,ex1,e1,exp1,c1)
+
+     let (v2,  tdir1) = infere_exp amb var
+     (* Faz o mesmo para o lado esquerdo *)
+     and (ex2, tesq1) = infere_exp amb exp in
+     (* Os dois tipos devem ser iguais *)
+     let _ = mesmo_tipo (posicao var)
+                        "Atribuicao com tipos diferentes: %s = %s" tesq1 tdir1 in 
+
+      CmdFor ( v1,ex1,e1,v2,ex2,c1)
 
   | ComandoExpress (e) ->  let (e1,  tinf) = infere_exp amb e in ComandoExpress e1
 

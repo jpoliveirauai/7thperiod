@@ -1,6 +1,6 @@
 programa: FUNCAO ID APAR FPAR DOISPONTOS BOOL ATRIB ACHAVE FCHAVE RETURN PONTOVIRG BREAK 
 ##
-## Ends in an error in state: 183.
+## Ends in an error in state: 185.
 ##
 ## programa -> declaracoes nonempty_list(declaracao_funcao) list(comando) . EOF [ # ]
 ##
@@ -11,15 +11,15 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS BOOL ATRIB ACHAVE FCHAVE RETURN PONTOVI
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS BOOL ATRIB ACHAVE FCHAVE VOID 
 ##
-## Ends in an error in state: 185.
+## Ends in an error in state: 187.
 ##
 ## nonempty_list(declaracao_funcao) -> declaracao_funcao . [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR EOF APAR ]
 ## nonempty_list(declaracao_funcao) -> declaracao_funcao . nonempty_list(declaracao_funcao) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR EOF APAR ]
@@ -68,54 +68,54 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE APAR WHILE
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
-programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG LITSTRING FPAR ACHAVE RETURN PONTOVIRG EOF 
+programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG ID ATRIB LITSTRING FPAR ACHAVE RETURN PONTOVIRG EOF 
 ##
-## Ends in an error in state: 133.
+## Ends in an error in state: 135.
 ##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
-## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) 
+## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) 
 ##
 ## WARNING: This example involves spurious reductions.
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
-programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG LITSTRING FPAR ACHAVE VOID 
+programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG ID ATRIB LITSTRING FPAR ACHAVE VOID 
+##
+## Ends in an error in state: 126.
+##
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG ID ATRIB LITSTRING FPAR WHILE 
+##
+## Ends in an error in state: 125.
+##
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR . ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG ID ATRIB LITSTRING WHILE 
 ##
 ## Ends in an error in state: 124.
 ##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
-##
-## The known suffix of the stack is as follows:
-## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE 
-##
-
-<YOUR SYNTAX ERROR MESSAGE HERE>
-
-programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG LITSTRING FPAR WHILE 
-##
-## Ends in an error in state: 123.
-##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR . ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
-##
-## The known suffix of the stack is as follows:
-## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR 
-##
-
-<YOUR SYNTAX ERROR MESSAGE HERE>
-
-programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG LITSTRING WHILE 
-##
-## Ends in an error in state: 122.
-##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao . FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao . FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ## expressao -> expressao . MAIS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
 ## expressao -> expressao . MENOS expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
 ## expressao -> expressao . MULTIPLICA expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
@@ -132,7 +132,31 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LIT
 ## expressao -> expressao . EXPOENTE expressao [ OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EXPOENTE E DIVIDE DIFERENTE ]
 ##
 ## The known suffix of the stack is as follows:
-## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao 
+## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG ID ATRIB WHILE 
+##
+## Ends in an error in state: 123.
+##
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB . expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LITSTRING PONTOVIRG LITSTRING PONTOVIRG ID WHILE 
+##
+## Ends in an error in state: 122.
+##
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel . ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+##
+## The known suffix of the stack is as follows:
+## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
@@ -141,7 +165,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LIT
 ##
 ## Ends in an error in state: 121.
 ##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG . expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG . variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
 ## FOR APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG 
@@ -153,7 +177,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LIT
 ##
 ## Ends in an error in state: 120.
 ##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao . PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG expressao . PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ## expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 ## expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 ## expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -179,7 +203,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LIT
 ##
 ## Ends in an error in state: 119.
 ##
-## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG . expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB expressao PONTOVIRG . expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
 ## FOR APAR variavel ATRIB expressao PONTOVIRG 
@@ -191,7 +215,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB LIT
 ##
 ## Ends in an error in state: 118.
 ##
-## comando_for -> FOR APAR variavel ATRIB expressao . PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB expressao . PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ## expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 ## expressao -> expressao . MENOS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
 ## expressao -> expressao . MULTIPLICA expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -217,7 +241,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID ATRIB WHI
 ##
 ## Ends in an error in state: 117.
 ##
-## comando_for -> FOR APAR variavel ATRIB . expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel ATRIB . expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
 ## FOR APAR variavel ATRIB 
@@ -229,7 +253,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR ID WHILE
 ##
 ## Ends in an error in state: 116.
 ##
-## comando_for -> FOR APAR variavel . ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR variavel . ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
 ## FOR APAR variavel 
@@ -241,7 +265,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR APAR WHILE
 ##
 ## Ends in an error in state: 115.
 ##
-## comando_for -> FOR APAR . variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR APAR . variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
 ## FOR APAR 
@@ -253,7 +277,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE FOR WHILE
 ##
 ## Ends in an error in state: 114.
 ##
-## comando_for -> FOR . APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
+## comando_for -> FOR . APAR variavel ATRIB expressao PONTOVIRG expressao PONTOVIRG variavel ATRIB expressao FPAR ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
 ## The known suffix of the stack is as follows:
 ## FOR 
@@ -275,7 +299,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID APAR WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID ATRIB LITSTRING WHILE 
 ##
-## Ends in an error in state: 131.
+## Ends in an error in state: 133.
 ##
 ## comando_atribuicao -> variavel ATRIB expressao . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ## expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -301,7 +325,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID ATRIB LITSTRING WH
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID ATRIB WHILE 
 ##
-## Ends in an error in state: 130.
+## Ends in an error in state: 132.
 ##
 ## comando_atribuicao -> variavel ATRIB . expressao PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -313,7 +337,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID ATRIB WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID DECREMENTO WHILE 
 ##
-## Ends in an error in state: 128.
+## Ends in an error in state: 130.
 ##
 ## comando_decremento -> variavel DECREMENTO . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -325,7 +349,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID DECREMENTO WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID INCREMENTO WHILE 
 ##
-## Ends in an error in state: 126.
+## Ends in an error in state: 128.
 ##
 ## comando_incremento -> variavel INCREMENTO . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -337,7 +361,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID INCREMENTO WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID VIRG 
 ##
-## Ends in an error in state: 125.
+## Ends in an error in state: 127.
 ##
 ## comando_atribuicao -> variavel . ATRIB expressao PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ## comando_decremento -> variavel . DECREMENTO PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
@@ -371,7 +395,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE ID WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE ACHAVE RETURN PONTOVIRG EOF 
 ##
-## Ends in an error in state: 155.
+## Ends in an error in state: 157.
 ##
 ## option(__anonymous_0) -> ELSE ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -382,15 +406,15 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPA
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE ACHAVE VOID 
 ##
-## Ends in an error in state: 154.
+## Ends in an error in state: 156.
 ##
 ## option(__anonymous_0) -> ELSE ACHAVE . list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -402,7 +426,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPA
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE WHILE 
 ##
-## Ends in an error in state: 153.
+## Ends in an error in state: 155.
 ##
 ## option(__anonymous_0) -> ELSE . ACHAVE list(comando) FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -414,7 +438,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPA
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE VOID 
 ##
-## Ends in an error in state: 152.
+## Ends in an error in state: 154.
 ##
 ## comando_se -> IF APAR expressao FPAR ACHAVE list(comando) FCHAVE . option(__anonymous_0) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -426,7 +450,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPA
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPAR ACHAVE RETURN PONTOVIRG EOF 
 ##
-## Ends in an error in state: 151.
+## Ends in an error in state: 153.
 ##
 ## comando_se -> IF APAR expressao FPAR ACHAVE list(comando) . FCHAVE option(__anonymous_0) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -437,8 +461,8 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE IF APAR LITSTRING FPA
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
@@ -1009,7 +1033,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE LITSTRING OU WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE LITSTRING WHILE 
 ##
-## Ends in an error in state: 135.
+## Ends in an error in state: 137.
 ##
 ## comando_expressao -> expressao . PONTOVIRG [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ## expressao -> expressao . MAIS expressao [ PONTOVIRG OU MULTIPLICA MODULO MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EXPOENTE E DIVIDE DIFERENTE ]
@@ -1161,7 +1185,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE RETURN LITSTRING WHIL
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE RETURN PONTOVIRG EOF 
 ##
-## Ends in an error in state: 174.
+## Ends in an error in state: 176.
 ##
 ## declaracao_funcao -> FUNCAO ID APAR parametros FPAR DOISPONTOS tipo_simples ATRIB ACHAVE declaracoes list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR EOF APAR ]
 ##
@@ -1172,15 +1196,15 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE RETURN PONTOVIRG EOF
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE RETURN PONTOVIRG VOID 
 ##
-## Ends in an error in state: 149.
+## Ends in an error in state: 151.
 ##
 ## list(comando) -> comando . list(comando) [ FCHAVE EOF BREAK ]
 ##
@@ -1206,7 +1230,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE RETURN WHILE
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE CASE LITSTRING DOISPONTOS BREAK PONTOVIRG WHILE 
 ##
-## Ends in an error in state: 170.
+## Ends in an error in state: 172.
 ##
 ## list(cases) -> cases . list(cases) [ FCHAVE DEFAULT ]
 ##
@@ -1218,7 +1242,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE CASE LITSTRING DOISPONTOS BREAK WHILE 
 ##
-## Ends in an error in state: 159.
+## Ends in an error in state: 161.
 ##
 ## cases -> CASE expressao DOISPONTOS list(comando) BREAK . PONTOVIRG [ FCHAVE DEFAULT CASE ]
 ##
@@ -1230,7 +1254,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE CASE LITSTRING DOISPONTOS RETURN PONTOVIRG FCHAVE 
 ##
-## Ends in an error in state: 158.
+## Ends in an error in state: 160.
 ##
 ## cases -> CASE expressao DOISPONTOS list(comando) . BREAK PONTOVIRG [ FCHAVE DEFAULT CASE ]
 ##
@@ -1241,8 +1265,8 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
@@ -1299,7 +1323,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE DEFAULT DOISPONTOS BREAK PONTOVIRG WHILE 
 ##
-## Ends in an error in state: 167.
+## Ends in an error in state: 169.
 ##
 ## comando_case -> SWITCH APAR variavel FPAR ACHAVE list(cases) option(case_default) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -1311,7 +1335,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE DEFAULT DOISPONTOS BREAK WHILE 
 ##
-## Ends in an error in state: 165.
+## Ends in an error in state: 167.
 ##
 ## case_default -> DEFAULT DOISPONTOS list(comando) BREAK . PONTOVIRG [ FCHAVE ]
 ##
@@ -1323,7 +1347,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE DEFAULT DOISPONTOS RETURN PONTOVIRG FCHAVE 
 ##
-## Ends in an error in state: 164.
+## Ends in an error in state: 166.
 ##
 ## case_default -> DEFAULT DOISPONTOS list(comando) . BREAK PONTOVIRG [ FCHAVE ]
 ##
@@ -1334,15 +1358,15 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE DEFAULT DOISPONTOS VOID 
 ##
-## Ends in an error in state: 163.
+## Ends in an error in state: 165.
 ##
 ## case_default -> DEFAULT DOISPONTOS . list(comando) BREAK PONTOVIRG [ FCHAVE ]
 ##
@@ -1354,7 +1378,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR A
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE SWITCH APAR ID FPAR ACHAVE DEFAULT WHILE 
 ##
-## Ends in an error in state: 162.
+## Ends in an error in state: 164.
 ##
 ## case_default -> DEFAULT . DOISPONTOS list(comando) BREAK PONTOVIRG [ FCHAVE ]
 ##
@@ -1437,8 +1461,8 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE VAR ID DOISPONTOS BOO
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 176, spurious reduction of production list(declaracao) -> 
-## In state 177, spurious reduction of production list(declaracao) -> declaracao list(declaracao) 
+## In state 178, spurious reduction of production list(declaracao) -> 
+## In state 179, spurious reduction of production list(declaracao) -> declaracao list(declaracao) 
 ## In state 16, spurious reduction of production declaracoes -> list(declaracao) 
 ##
 
@@ -1458,7 +1482,7 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE VOID
 
 programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE WHILE APAR LITSTRING FPAR ACHAVE RETURN PONTOVIRG EOF 
 ##
-## Ends in an error in state: 172.
+## Ends in an error in state: 174.
 ##
 ## comando_while -> WHILE APAR expressao FPAR ACHAVE list(comando) . FCHAVE [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FOR FCHAVE EOF BREAK APAR ]
 ##
@@ -1469,8 +1493,8 @@ programa: FUNCAO ID APAR FPAR DOISPONTOS VOID ATRIB ACHAVE WHILE APAR LITSTRING 
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 149, spurious reduction of production list(comando) -> 
-## In state 150, spurious reduction of production list(comando) -> comando list(comando) 
+## In state 151, spurious reduction of production list(comando) -> 
+## In state 152, spurious reduction of production list(comando) -> comando list(comando) 
 ##
 
 <YOUR SYNTAX ERROR MESSAGE HERE>
@@ -1599,7 +1623,7 @@ programa: FUNCAO ID APAR FPAR WHILE
 
 programa: FUNCAO ID APAR ID DOISPONTOS BOOL VIRG WHILE 
 ##
-## Ends in an error in state: 180.
+## Ends in an error in state: 182.
 ##
 ## separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args VIRG . separated_nonempty_list(VIRG,declaracao_args) [ FPAR ]
 ##
@@ -1611,7 +1635,7 @@ programa: FUNCAO ID APAR ID DOISPONTOS BOOL VIRG WHILE
 
 programa: FUNCAO ID APAR ID DOISPONTOS BOOL WHILE 
 ##
-## Ends in an error in state: 179.
+## Ends in an error in state: 181.
 ##
 ## separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args . [ FPAR ]
 ## separated_nonempty_list(VIRG,declaracao_args) -> declaracao_args . VIRG separated_nonempty_list(VIRG,declaracao_args) [ FPAR ]
@@ -1683,8 +1707,8 @@ programa: VAR ID DOISPONTOS BOOL PONTOVIRG FOR
 ## This implies that, although the LR(1) items shown above provide an
 ## accurate view of the past (what has been recognized so far), they
 ## may provide an INCOMPLETE view of the future (what was expected next).
-## In state 176, spurious reduction of production list(declaracao) -> 
-## In state 177, spurious reduction of production list(declaracao) -> declaracao list(declaracao) 
+## In state 178, spurious reduction of production list(declaracao) -> 
+## In state 179, spurious reduction of production list(declaracao) -> declaracao list(declaracao) 
 ## In state 16, spurious reduction of production declaracoes -> list(declaracao) 
 ##
 
@@ -1692,7 +1716,7 @@ programa: VAR ID DOISPONTOS BOOL PONTOVIRG FOR
 
 programa: VAR ID DOISPONTOS BOOL PONTOVIRG VOID 
 ##
-## Ends in an error in state: 176.
+## Ends in an error in state: 178.
 ##
 ## list(declaracao) -> declaracao . list(declaracao) [ WHILE SWITCH RETURN PRINT LITSTRING LITREAL LITINT LITCHAR LITBOOL LEIA IF ID FUNCAO FOR FCHAVE APAR ]
 ##

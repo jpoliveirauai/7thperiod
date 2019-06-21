@@ -162,9 +162,9 @@ comando_entrada: LEIA APAR xs=expressao FPAR PONTOVIRG {CmdEntrada xs}
 comando_saida: PRINT APAR xs=separated_nonempty_list(VIRG, expressao) FPAR PONTOVIRG { CmdSaida xs }
 
 /* Comando For								- OOK*/
-comando_for: FOR APAR v=variavel ATRIB ex=expressao PONTOVIRG e=expressao PONTOVIRG exp = expressao FPAR ACHAVE
+comando_for: FOR APAR v=variavel ATRIB ex=expressao PONTOVIRG e=expressao PONTOVIRG var=variavel ATRIB exp = expressao FPAR ACHAVE
 							c= comando* 
-						FCHAVE { CmdFor(ExpVar v,ex,e,exp,c) }
+						FCHAVE { CmdFor(ExpVar v,ex,e, ExpVar var,exp,c) }
 
 /* Comando WHILE 							- OOK */
 comando_while: WHILE APAR teste=expressao FPAR ACHAVE c=comando* FCHAVE {CmdWhile(teste,c)}
