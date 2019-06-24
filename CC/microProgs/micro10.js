@@ -10,24 +10,24 @@ function fatorial(numero:integer): integer = {
     }
 }
 
-// console.log("Digite um numero");
-// readline(n);
-// fat = fatorial(n);
-// console.log("O fatorial de: ",n," é",fat);
-// fat = 3;
-// while(fat>0){
-//     console.log(fat);
-//     fat = fat - 1;
-// }
-// switch(fat){
-//     case 1:
-//         console.log("rapaz");
-//     break;
-//     default:
-//         console.log("vixe");
-//     break;
-// }
+console.log("Digite um numero");
+readline(n);
+fat = fatorial(n);
+console.log("O fatorial de: ",n," é",fat);
+fat = 3;
+while(fat>0){
+    console.log(fat);
+    fat = fat - 1;
+}
+switch(fat){
+    case 1:
+        console.log("rapaz");
+    break;
+    default:
+        console.log("vixe");
+    break;
+}
 for (fat = 0; fat<3; fat = fat +1){
     console.log(fat);
-    // fat = fat + 1;
+    fat = fat + 1;
 }
